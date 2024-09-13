@@ -6,21 +6,39 @@ import benzbg from "@/app/assets/mercedes-bg.jpg";
 import Image from "next/image";
 import { useForm } from "react-hook-form";
 import { login } from "@/app/auth/actions";
+import { useState } from "react";
 
 const SigninForm = () => {
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
 
-  const handleFormSubmit = (data) => {
-    login(data);
+  const handleFormSubmit = async (data) => {
+    try {
+      setError(""); // Clear any previous errors
+      setLoading(true);
+
+      const response = await login(data);
+
+      if (response.error) {
+        setError(response.error);
+      }
+    } catch (err) {
+      setError("Prijava je neuspešna! Proverite podatke i probajte ponovo.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
     <div className="min-h-full max-w-4xl mx-auto bg-bgShade flex justify-center items-center mt-14 rounded-lg shadow-lg overflow-hidden ">
       <div className="p-6 w-full ">
+        {error !== "" && <p className="text-center text-red-400">{error}</p>}
         <h2 className="text-3xl font-semibold text-primary text-center mb-6">
           Prijavi se
         </h2>
@@ -71,7 +89,7 @@ const SigninForm = () => {
           </div>
 
           <div className="flex items-center justify-between">
-            <Button type="submit">Prijavi se</Button>
+            <Button type="submit">{loading ? "Loading" : "Prijavi se"}</Button>
           </div>
         </form>
 

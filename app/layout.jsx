@@ -1,3 +1,4 @@
+import { Toaster } from "react-hot-toast";
 import "./globals.css";
 import Navigation from "@/components/navigation/navigation";
 
@@ -11,6 +12,13 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className="antialiased">
         <Navigation />
+        <Toaster
+          position="top-center"
+          toastOptions={{
+            className: "bg-shade text-primary",
+            duration: 3000,
+          }}
+        />
         {children}
       </body>
     </html>
