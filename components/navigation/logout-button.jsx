@@ -1,5 +1,6 @@
 "use client";
 
+import { MdOutlineLogout } from "react-icons/md";
 import { logout } from "@/app/auth/actions";
 
 const LogoutButton = () => {
@@ -10,7 +11,7 @@ const LogoutButton = () => {
 
   return (
     <button onClick={handleLogout} type="button">
-      Odjavi se
+      <MdOutlineLogout className="text-2xl " />
     </button>
   );
 };

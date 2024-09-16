@@ -2,18 +2,34 @@
 
 import { useForm } from "react-hook-form";
 import Button from "../ui/button";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { createClient, supabaseUrl } from "@/lib/supabase/client";
 import { createListing } from "@/app/dashboard/actions";
 import toast from "react-hot-toast";
 
 const AddListingForm = () => {
   const [loading, setLoading] = useState(false);
+  const [userId, setUserId] = useState("");
+
+  useEffect(() => {
+    getUserId();
+  }, []);
+
+  const getUserId = async () => {
+    const supabase = createClient();
+    try {
+      const { data } = await supabase.auth.getUser();
+      setUserId(data?.user?.id);
+    } catch (error) {
+      throw new Error("Error");
+    }
+  };
 
   const {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm();
 
   const onSubmit = async (data) => {
@@ -23,7 +39,16 @@ const AddListingForm = () => {
       // Handle image uploads on the client side
       const imagePaths = await uploadImagesToSupabase(data.car_images);
 
-      const newCarData = { ...data, car_images: imagePaths };
+      if (!userId) {
+        toast.error("Nije moguće uspostaviti konekciju. Probajte ponovo");
+        return;
+      }
+
+      const newCarData = {
+        ...data,
+        car_images: imagePaths,
+        profile_id: userId,
+      };
 
       const response = await createListing(newCarData);
 
@@ -37,6 +62,7 @@ const AddListingForm = () => {
       toast.success("Greška u toku objave oglasa! Pokušajte ponovo");
     } finally {
       setLoading(false);
+      reset();
     }
   };
 

@@ -1,5 +1,6 @@
 import { createClient } from "@/lib/supabase/server";
 import { redirect } from "next/navigation";
+import DashboardLayout from "./dashboard-layout";
 
 const Dashboard = async () => {
   const supabase = createClient();
@@ -10,9 +11,8 @@ const Dashboard = async () => {
   }
 
   return (
-    <section>
-      <h1>Dashboard</h1>
-      <p>Hello {data.user.email}</p>
+    <section className="mt-20 max-w-[80rem] mx-auto px-9">
+      <DashboardLayout userId={data?.user?.id} />
     </section>
   );
 };

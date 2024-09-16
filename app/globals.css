@@ -41,8 +41,8 @@ h3 {
 
 .grid-display {
   display: grid;
-  grid-template-columns: 1.2fr 0.9fr;
-  gap: 2rem;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
 }
 
 .item1 {
@@ -64,6 +64,10 @@ h3 {
   background-position-x: -60px;
   /* background-position-y: -60px; */
   background-repeat: no-repeat;
+}
+
+img {
+  width: auto;
 }
 
 @media (prefers-color-scheme: dark) {

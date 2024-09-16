@@ -1,33 +1,45 @@
-import oglas from "@/app/assets/cars/oglas.png";
-import Image from "next/image";
+const CarCard = ({ listing, className }) => {
+  const {
+    car_images = [],
+    model = "",
+    power = "",
+    car_state = "",
+    production_year = "",
+    price = "",
+  } = listing || {};
 
-const CarCard = () => {
   return (
     <div className="">
       <div className="bg-bgShade w-full rounded-2xl relative ">
-        <Image
-          src={oglas}
-          alt=""
-          className="w-full rounded-t-2xl"
-          width={400}
-          height={"auto"}
-        />
+        <div
+          className={`bg-cover bg-center bg-no-repeat rounded-t-2xl ${
+            className ? className : "h-[450px]"
+          } w-full`}
+          style={{
+            backgroundImage: `url('${car_images[0]}')`,
+          }}
+        ></div>
+
         <div className="p-3">
-          <div className="pb-3">Mercedes Benz G500 AMG</div>
+          <div className="pb-3">{model}</div>
           <hr />
 
           <div className="flex items-start justify-between gap-2 pt-2">
             <div className="flex items-center gap-2">
-              <p>2022. god</p>
-              <button className="bg-primary px-2 rounded-md font-semibold tracking-wider text-white">
-                NOVO
-              </button>
-              <p>416ks</p>
+              <p>{production_year}. god</p>
+              {car_state === "Novo" && (
+                <div className="bg-primary px-2 rounded-md font-semibold tracking-wider text-white">
+                  NOVO
+                </div>
+              )}
+              <p>{power}ks</p>
             </div>
 
             <div className="pt-2">
               <p>Cena</p>
-              <span className="font-bold text-primary">UPIT</span>
+              <span className="font-bold text-primary">
+                {price !== "" ? "UPIT" : price}
+              </span>
             </div>
           </div>
         </div>

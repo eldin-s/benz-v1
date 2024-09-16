@@ -1,14 +1,13 @@
 "use server";
 
-import { supabaseUrl } from "@/lib/supabase/client";
 import { createClient } from "@/lib/supabase/server";
 
-export async function createListing(newCar) {
-  const supabase = createClient();
+const supabase = createClient();
 
+export async function createListing(newCar) {
   const { data, error } = await supabase
     .from("cars")
-    .insert([{ ...newCar, car_images: newCar.images }])
+    .insert([{ ...newCar }])
     .select();
 
   if (error) {
@@ -17,4 +16,54 @@ export async function createListing(newCar) {
   }
 
   return data;
+}
+
+export async function getListingsForUser(userId) {
+  const { data: cars, error } = await supabase
+    .from("cars")
+    .select("*")
+    .eq("profile_id", userId);
+
+  if (error) {
+    throw new Error("Trenutno nije moguće pokazati oglase");
+  }
+
+  return cars;
+}
+
+export async function getSignleCar(carId) {
+  const { data: car, error } = await supabase
+    .from("cars")
+    .select("*")
+    .eq("id", carId)
+    .single();
+
+  if (error) {
+    throw new Error("Trenutno nije moguće pokazati detalje oglasa");
+  }
+
+  return car;
+}
+
+export async function get5Cars() {
+  const { data: cars, error } = await supabase
+    .from("cars")
+    .select("*")
+    .range(0, 4);
+
+  if (error) {
+    throw new Error("Trenutno nije moguće pokazati oglase");
+  }
+
+  return cars;
+}
+
+export async function getAllCars() {
+  const { data: cars, error } = await supabase.from("cars").select("*");
+
+  if (error) {
+    throw new Error("Trenutno nije moguće pokazati oglase");
+  }
+
+  return cars;
 }
