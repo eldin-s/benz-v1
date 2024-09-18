@@ -7,26 +7,100 @@ import { FaAngleDown } from "react-icons/fa6";
 import gside from "@/app/assets/cars/g-side.png";
 import gleside from "@/app/assets/cars/gle-side.png";
 import sside from "@/app/assets/cars/s-side.png";
-import Button from "../../ui/button";
 import Image from "next/image";
+import DropdownSearches from "@/components/ui/dropdown-searches";
+import { useSearchParams, useRouter } from "next/navigation";
+import Button from "@/components/ui/button";
 
 const SearchCard = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [searchParams] = useSearchParams();
+
+  const router = useRouter();
+
+  // Filters
   const [model, setModel] = useState("Model");
+  const [carState, setCarState] = useState("Sve");
+  const [odGodine, setOdGodine] = useState("");
+  const [doGodine, setDoGodine] = useState("");
+  const [vrstaGoriva, setVrstaGoriva] = useState("");
+  const [odCene, setOdCene] = useState("");
+  const [doCene, setDoCene] = useState("");
+  const [karoserija, setKaroserija] = useState("");
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
+  };
+
+  const handleSearch = () => {
+    const params = new URLSearchParams(searchParams);
+    params.set("stanje", carState);
+    if (odGodine) {
+      params.set("odGodine", odGodine);
+    } else {
+      params.delete("odGodine");
+    }
+
+    if (doGodine) {
+      params.set("doGodine", doGodine);
+    } else {
+      params.delete("doGodine");
+    }
+    if (vrstaGoriva) {
+      params.set("vrstaGoriva", vrstaGoriva);
+    } else {
+      params.delete("vrstaGoriva");
+    }
+
+    if (odCene) {
+      params.set("odCene", odCene);
+    } else;
+    {
+      params.delete("odCene");
+    }
+    if (doCene) {
+      params.set("doCene", doCene);
+    } else {
+      params.delete("doCene");
+    }
+    if (karoserija) {
+      params.set("karoserija", karoserija);
+    } else {
+      params.delete("karoserija");
+    }
+
+    router.replace(`/search?${params.toString()}`);
   };
 
   return (
     <div className="bg-gray-300 rounded-2xl">
       {/* CARD HEADER */}
       <div className="grid grid-cols-3 justify-items-center  text-xl">
-        <p className="text-primary font-light px-10 py-4">Sve</p>
-        <p className="text-black font-light px-10 py-4 border-x w-full text-center border-gray-500">
+        <div
+          className={`${
+            carState === "Sve" ? "text-primary" : "text-black"
+          } font-light px-10 py-4 cursor-pointer w-full text-center
+          `}
+          onClick={() => setCarState("Sve")}
+        >
+          Sve
+        </div>
+        <div
+          className={`${
+            carState === "Novo" ? "text-primary" : "text-black"
+          } font-light px-10 py-4 border-x w-full text-center border-gray-500 cursor-pointer`}
+          onClick={() => setCarState("Novo")}
+        >
           Novo
-        </p>
-        <p className="text-black font-light px-10 py-4">Polovno</p>
+        </div>
+        <div
+          className={`${
+            carState === "Polovno" ? "text-primary" : "text-black"
+          } font-light px-10 py-4 cursor-pointer w-full text-center`}
+          onClick={() => setCarState("Polovno")}
+        >
+          Polovno
+        </div>
       </div>
 
       {/* CARD BODY */}
@@ -88,59 +162,16 @@ const SearchCard = () => {
           </div>
         )}
 
-        <div className="flex items-center gap-x-4 flex-wrap">
-          <div className="flex items-center border rounded-2xl border-gray-400 mt-4 h-14 relative">
-            <p className="cursor-pointer px-4 font-medium">Od godine</p>
+        <DropdownSearches
+          setOdGodine={setOdGodine}
+          setDoGodine={setDoGodine}
+          setVrstaGoriva={setVrstaGoriva}
+          setOdCene={setOdCene}
+          setDoCene={setDoCene}
+          setKaroserija={setKaroserija}
+        />
 
-            <div className="pr-2">
-              <FaAngleDown />
-            </div>
-          </div>
-
-          <div className="flex items-center border rounded-2xl border-gray-400 mt-4 h-14 relative">
-            <p className="cursor-pointer px-4 font-medium">Do godine</p>
-
-            <div className="pr-2">
-              <FaAngleDown />
-            </div>
-          </div>
-
-          <div className="flex items-center border rounded-2xl border-gray-400 mt-4 h-14 relative">
-            <p className="cursor-pointer px-4 font-medium">Vrsta goriva</p>
-
-            <div className="pr-2">
-              <FaAngleDown />
-            </div>
-          </div>
-        </div>
-
-        <div className="flex items-center gap-4 flex-wrap">
-          <div className="flex items-center border rounded-2xl border-gray-400 mt-4 h-14 relative">
-            <p className="cursor-pointer px-4 font-medium">Od godine</p>
-
-            <div className="pr-2">
-              <FaAngleDown />
-            </div>
-          </div>
-
-          <div className="flex items-center border rounded-2xl border-gray-400 mt-4 h-14 relative">
-            <p className="cursor-pointer px-4 font-medium">Do godine</p>
-
-            <div className="pr-2">
-              <FaAngleDown />
-            </div>
-          </div>
-
-          <div className="flex items-center border rounded-2xl border-gray-400 mt-4 h-14 relative">
-            <p className="cursor-pointer px-4 font-medium">Karoserija</p>
-
-            <div className="pr-2">
-              <FaAngleDown />
-            </div>
-          </div>
-        </div>
-
-        <Button> Pretraži</Button>
+        <Button onClick={handleSearch}> Pretraži</Button>
 
         <div className="flex items-center border rounded-2xl ">
           <div className="w-30 h-full border-r bg-primary px-2 py-4 rounded-s-xl text-white font-semibold text-sm">

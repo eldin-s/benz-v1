@@ -2,7 +2,6 @@
 
 import amg from "@/app/assets/AMG-Logo.png";
 import glb from "@/app/assets/cars/GLB_35.png";
-import glc from "@/app/assets/cars/glc.png";
 import gls from "@/app/assets/cars/gls.png";
 import { PiEngine } from "react-icons/pi";
 import { SlSpeedometer } from "react-icons/sl";
@@ -27,7 +26,7 @@ const images = [
     src: gls,
     name: "GLS",
     description:
-      "Pritisnite start da oživite V8 motor od 603 konjske snage i pustite ga da buči kroz 4 podešene izduvne cevi. Inteligentni pogon na sva četiri točka, samostabilizujuće vešanje i crvene kočione čeljusti sa šest klipova.",
+      "Pritisnite start da oživite V8 motor od 603 konjske snage i pustite ga da buči kroz 4 podešene izduvne cevi. Inteligentni pogon na sva četiri točka, samostabilizujuće vešanje i crvene kočione čeljusti.",
     engine: "AMG V8",
     power: "450kw/603ks",
     transmission: "AMG SPEEDSHIFT DCT 8G",
@@ -36,7 +35,6 @@ const images = [
 
 const Slider = () => {
   const [currentIndex, setCurrentIdex] = useState(0);
-  const [isHovered, setIsHovered] = useState(false);
 
   const prevSlide = () => {
     setCurrentIdex(

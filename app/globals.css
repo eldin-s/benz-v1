@@ -62,13 +62,48 @@ h3 {
   background-position: bottom;
   background-size: cover;
   background-position-x: -60px;
-  /* background-position-y: -60px; */
+  background-repeat: no-repeat;
+}
+
+.search-bg {
+  background-image: url("/assets/search-bg.png");
+  background-position: center;
+  background-size: cover;
   background-repeat: no-repeat;
 }
 
 img {
   width: auto;
 }
+
+input[type='radio']:after {
+  width: 14px;
+  height: 14px;
+  border-radius: 14px;
+  top: -3px;
+  /* left: -1px; */
+  position: relative;
+  background-color: white;
+  content: '';
+  display: inline-block;
+  visibility: visible;
+  border: 1px solid gray;
+}
+
+input[type='radio']:checked:after {
+  width: 14px;
+  height: 14px;
+  border-radius: 14px;
+  top: -3px;
+  /* left: -1px; */
+  position: relative;
+  background-color: #ff4605;
+  content: '';
+  display: inline-block;
+  visibility: visible;
+  border: 1px solid gray;
+}
+
 
 @media (prefers-color-scheme: dark) {
   :root {

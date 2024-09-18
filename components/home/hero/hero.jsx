@@ -1,9 +1,9 @@
-import SearchCard from "./search-card";
 import Slider from "./slider";
+import SearchCard from "./search-card";
 
 const Hero = () => {
   return (
-    <div className="xl:grid grid-cols-2 gap-20 mt-20 max-w-[80rem] mx-auto relative p-8">
+    <div className="xl:grid grid-cols-2 gap-20 mt-12 max-w-[70rem] mx-auto relative p-8">
       <SearchCard />
       <Slider />
 
