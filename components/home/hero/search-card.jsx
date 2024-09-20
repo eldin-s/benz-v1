@@ -19,7 +19,7 @@ const SearchCard = () => {
   const router = useRouter();
 
   // Filters
-  const [model, setModel] = useState("Model");
+  const [model, setModel] = useState("");
   const [carState, setCarState] = useState("Sve");
   const [odGodine, setOdGodine] = useState("");
   const [doGodine, setDoGodine] = useState("");
