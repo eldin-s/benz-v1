@@ -1,21 +1,23 @@
 "use client";
 
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 const ImageSlider = ({ images }) => {
-  const [currentIndex, setCurrentIdex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
+  const thumbnailContainerRef = useRef(null);
 
   const prevSlide = () => {
-    setCurrentIdex(
+    setCurrentIndex(
       (prevIndex) => (prevIndex - 1 + images.length) % images.length
     );
   };
+
   const nextSlide = () => {
-    setCurrentIdex((prevIndex) => (prevIndex + 1) % images.length);
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
   };
+
   useEffect(() => {
     if (!isHovered) {
       const interval = setInterval(() => {
@@ -36,45 +38,78 @@ const ImageSlider = ({ images }) => {
     setIsHovered(false);
   };
 
+  const handleThumbnailClick = (index) => {
+    setCurrentIndex(index);
+  };
+
+  // Scroll thumbnails to the active item
+  useEffect(() => {
+    scrollThumbnailToActiveItem();
+  }, [currentIndex]);
+
+  const scrollThumbnailToActiveItem = () => {
+    if (thumbnailContainerRef.current) {
+      const activeItem = thumbnailContainerRef.current.children[currentIndex];
+      const containerWidth = thumbnailContainerRef.current.offsetWidth;
+      const itemWidth = activeItem.offsetWidth;
+
+      const scrollToPosition =
+        activeItem.offsetLeft - (containerWidth - itemWidth) / 2;
+
+      thumbnailContainerRef.current.scrollTo({
+        left: scrollToPosition,
+        behavior: "smooth", // smooth scrolling
+      });
+    }
+  };
+
   return (
-    <div className="relative w-full mx-auto mt-4">
+    <div className="relative w-full mx-auto max-w-[800px] overflow-hidden">
+      {/* Main Image */}
       <div
-        className="relative sm:h-[500px] h-[300px] group "
+        className="relative sm:h-[500px] h-[300px] group bg-cover bg-center rounded-2xl"
         onMouseOver={handleMouseOver}
         onMouseLeave={handleMouseLeave}
-      >
-        <Image
-          src={images[currentIndex]}
-          layout="fill"
-          objectFit="contain"
-          sizes="(max-width: 640px) 100vw, (max-width: 768px) 75vw, 50vw"
-          className="rounded-xl transition-all duration-500 ease-in-out cursor-pointer h-auto"
-          alt="Oglas"
-        />
+        style={{
+          backgroundImage: `url('${images[currentIndex]}')`,
+        }}
+      ></div>
+
+      {/* Left and Right buttons */}
+      <div className="flex justify-between absolute bottom-6 w-full">
         <button
-          className="absolute left-0 top-1/2 h-fit rounded-xl hover:bg-[#1a222f] mx-1 -mt-[10px] -translate-y-1/2 bg-transparent text-white p-2 group"
+          className="h-fit rounded-xl bg-bgShade border border-primary mx-1 text-primary px-2 py-9 group z-50"
           onClick={prevSlide}
         >
-          <ChevronLeft className="text-gray-400 group-hover:text-white" />
+          <ChevronLeft className="group-hover:text-white" />
         </button>
         <button
-          className="absolute right-0 top-1/2 transform h-fit rounded-xl hover:bg-[#1a222f] mx-1 -mt-[10px] -translate-y-1/2 bg-transparent text-white p-2 group"
+          className="h-fit rounded-xl bg-bgShade border border-primary mx-1 text-primary px-2 py-9 group z-50"
           onClick={nextSlide}
         >
-          <ChevronRight className="text-gray-400 group-hover:text-white" />
+          <ChevronRight className="group-hover:text-white" />
         </button>
       </div>
-      <div className="flex justify-center mt-4">
-        {images.map((_, index) => (
-          <div
-            key={index}
-            className={`h-1 w-10 mx-1 ${
-              index === currentIndex
-                ? "bg-primary rounded-xl"
-                : "bg-gray-300 rounded-xl"
-            } transition-all duration-500 ease-in-out`}
-          ></div>
-        ))}
+
+      {/* Thumbnails */}
+      <div className="mt-4 w-10/12 mx-auto">
+        <div
+          className="flex gap-4 overflow-x-auto no-scrollbar"
+          ref={thumbnailContainerRef}
+        >
+          {images.map((image, index) => (
+            <div
+              key={index}
+              style={{
+                backgroundImage: `url('${image}')`,
+              }}
+              className={`w-24 h-24 bg-cover bg-center rounded-2xl cursor-pointer ${
+                index === currentIndex ? "border-2 border-primary" : ""
+              }`}
+              onClick={() => handleThumbnailClick(index)}
+            ></div>
+          ))}
+        </div>
       </div>
     </div>
   );

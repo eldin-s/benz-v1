@@ -4,6 +4,14 @@ import { getSignleCar } from "@/app/dashboard/actions";
 import ImageSlider from "@/components/ui/image-slider";
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
+import { TbRoad, TbManualGearbox } from "react-icons/tb";
+import { LuFuel } from "react-icons/lu";
+import { PiEngineBold } from "react-icons/pi";
+import ButtonOutline from "@/components/ui/button-outline";
+import { IoCall } from "react-icons/io5";
+import { MdOutlineEmail } from "react-icons/md";
+import Sigurnost from "./sigurnost";
+import Oprema from "./oprema";
 
 const SingleCar = () => {
   const [car, setCar] = useState();
@@ -24,71 +32,134 @@ const SingleCar = () => {
 
   return (
     <section className="mt-20 max-w-[80rem] mx-auto px-9 mb-20">
-      {car && car.car_images ? (
-        <ImageSlider images={car.car_images} alt="Mercedes" />
-      ) : (
-        <p>Loading...</p>
-      )}
+      <div className="flex justify-between gap-6">
+        {car && car.car_images ? (
+          <ImageSlider images={car.car_images} alt="Mercedes" />
+        ) : (
+          <p>Loading...</p>
+        )}
 
-      <div className="text-center">
-        <h2>{car?.model}</h2>
-      </div>
-      <div className="grid grid-cols-5 gap-8">
-        <div>
-          <p className="underline">Linija:</p>
-          <h4 className="font-bold text-xl">{car?.line}</h4>
-        </div>
+        <div className="bg-bgShade rounded-2xl p-4 flex flex-col justify-between gap-6">
+          <div className="text-center border-b-2 border-primary">
+            <h3>{car?.model}</h3>
+            <h2>198.000 €</h2>
+            {/* <h2>{car?.price}</h2> */}
+          </div>
 
-        <div>
-          <p className="underline">Motor:</p>
-          <h4 className="font-bold text-xl">{car?.engine_size}</h4>
-        </div>
+          <div className="border-b-2 border-primary grid grid-cols-2 gap-3 mt-8 pb-8">
+            <div className="flex items-center gap-2">
+              <TbRoad />
+              <p>2,300km</p>
+            </div>
+            <div className="flex items-center gap-2">
+              <TbManualGearbox />
+              <p>Automatik</p>
+            </div>
+            <div className="flex items-center gap-2">
+              <LuFuel />
+              <p>Benzin</p>
+            </div>
+            <div className="flex items-center gap-2">
+              <PiEngineBold className="text-xl" />
+              <p>450/612 (kw/KS)</p>
+            </div>
+          </div>
 
-        <div>
-          <p className="underline">Linija:</p>
-          <h4 className="font-bold text-xl">{car?.line}</h4>
-        </div>
+          <div className="w-full flex items-center flex-col py-8 gap-4">
+            <p className="text-center text-sm text-gray-400">
+              Ukoliko vam je potrebna pomoc kontaktirajte nas
+            </p>
+            <ButtonOutline>
+              <IoCall className="text-primary" />
+              Pozovite
+            </ButtonOutline>
 
-        <div>
-          <p className="underline">Pogon:</p>
-          <h4 className="font-bold text-xl">{car?.drivetrain}</h4>
-        </div>
-
-        <div>
-          <p className="underline">Snaga:</p>
-          <h4 className="font-bold text-xl">{car?.power} ks</h4>
-        </div>
-
-        <div>
-          <p className="underline">Obrtni moment:</p>
-          <h4 className="font-bold text-xl">{car?.torque} nm</h4>
-        </div>
-
-        <div>
-          <p className="underline">Boja:</p>
-          <h4 className="font-bold text-xl">{car?.color}</h4>
-        </div>
-
-        <div>
-          <p className="underline">Gorivo:</p>
-          <h4 className="font-bold text-xl">{car?.fuel_type}</h4>
-        </div>
-
-        <div>
-          <p className="underline">Stanje:</p>
-          <h4 className="font-bold text-xl">{car?.car_state}</h4>
-        </div>
-
-        <div>
-          <p className="underline">Tip:</p>
-          <h4 className="font-bold text-xl">{car?.car_type}</h4>
-        </div>
-
-        <div>
-          <p className="underline">Godina:</p>
-          <h4 className="font-bold text-xl">{car?.production_year}</h4>
+            <div className="flex items-center gap-2">
+              <ButtonOutline>
+                <MdOutlineEmail className="text-primary" />
+                Email
+              </ButtonOutline>
+              <ButtonOutline>
+                <span className="text-primary">P</span>
+              </ButtonOutline>
+            </div>
+          </div>
         </div>
       </div>
+
+      <div className="bg-bgShade p-6 mt-8 rounded-2xl">
+        <h4 className="text-xl py-4 px-2 mb-4 tracking-wider border-b border-primary ">
+          INFORMACIJE
+        </h4>
+        <div className="grid grid-cols-2 gap-16">
+          <div>
+            <div className="flex justify-between gap-2 border-b border-gray-400 py-1">
+              <span>Stanje:</span>
+              <span className="font-semibold">Polovno</span>
+            </div>
+
+            <div className="flex justify-between gap-2 border-b border-gray-400 py-1">
+              <span>Model:</span>
+              <span className="font-semibold">GLE 63 AMG</span>
+            </div>
+
+            <div className="flex justify-between gap-2 border-b border-gray-400 py-1">
+              <span>Menjac:</span>
+              <span className="font-semibold">Automatik</span>
+            </div>
+
+            <div className="flex justify-between gap-2 border-b border-gray-400 py-1">
+              <span>Godiste:</span>
+              <span className="font-semibold">2023</span>
+            </div>
+
+            <div className="flex justify-between gap-2 border-b border-gray-400 py-1">
+              <span>Kilometraza:</span>
+              <span className="font-semibold">2.300km</span>
+            </div>
+
+            <div className="flex justify-between gap-2 border-b border-gray-400 py-1">
+              <span>Karoserija:</span>
+              <span className="font-semibold">Dzip/Suv</span>
+            </div>
+          </div>
+
+          <div>
+            <div className="flex justify-between gap-2 border-b border-gray-400 py-1">
+              <span>Kubikaza:</span>
+              <span className="font-semibold">3982cm</span>
+            </div>
+
+            <div className="flex justify-between gap-2 border-b border-gray-400 py-1">
+              <span>Snaga:</span>
+              <span className="font-semibold">450/612 (k@/KS)</span>
+            </div>
+
+            <div className="flex justify-between gap-2 border-b border-gray-400 py-1">
+              <span>Klima:</span>
+              <span className="font-semibold">Automatska</span>
+            </div>
+
+            <div className="flex justify-between gap-2 border-b border-gray-400 py-1">
+              <span>Boja:</span>
+              <span className="font-semibold">Crna</span>
+            </div>
+
+            <div className="flex justify-between gap-2 border-b border-gray-400 py-1">
+              <span>Pogon:</span>
+              <span className="font-semibold">4x4</span>
+            </div>
+
+            <div className="flex justify-between gap-2 border-b border-gray-400 py-1">
+              <span>Gorivo:</span>
+              <span className="font-semibold">Benzin</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <Sigurnost />
+      <Oprema />
     </section>
   );
 };

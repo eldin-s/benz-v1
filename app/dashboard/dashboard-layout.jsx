@@ -32,7 +32,7 @@ const DashboardLayout = ({ userId }) => {
     <div className="grid grid-cols-3 gap-6">
       {listings?.map((listing) => (
         <Link href={`cars/${listing.id}`} key={listing.id}>
-          <CarCard listing={listing} />
+          <CarCard listing={listing} className={"h-[350px]"} />
         </Link>
       ))}
     </div>
