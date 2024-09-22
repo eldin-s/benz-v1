@@ -10,7 +10,7 @@ const DisplayCard1 = () => {
         <div className="relative w-full">
           <Image
             src={percent}
-            alt=""
+            alt="Percent"
             className="w-20 absolute -z-1 left-16 md:left-10 xl:left-32 top-10"
           />
           <Image src={glb35} alt="" className="w-72 absolute top-20 -left-2" />

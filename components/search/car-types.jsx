@@ -18,7 +18,7 @@ const CarTypes = ({ setKaroserija, karoserija }) => {
             karoserija === "Sedan" && "shadow bg-slate-200/70"
           } cursor-pointer`}
         >
-          <Image src={sedan} width={50} height={30} />
+          <Image alt="Sedan" src={sedan} width={50} height={30} />
         </div>
         <div
           onClick={() => setKaroserija("Hatchback")}
@@ -26,7 +26,7 @@ const CarTypes = ({ setKaroserija, karoserija }) => {
             karoserija === "Hatchback" && "shadow bg-slate-200/70"
           } cursor-pointer`}
         >
-          <Image src={hatchback} width={50} height={30} />
+          <Image alt="Hatchback" src={hatchback} width={50} height={30} />
         </div>
 
         <div
@@ -35,7 +35,7 @@ const CarTypes = ({ setKaroserija, karoserija }) => {
             karoserija === "Coupe" && "shadow bg-slate-200/70"
           } cursor-pointer`}
         >
-          <Image src={coupe} width={50} height={30} />
+          <Image alt="Coupe" src={coupe} width={50} height={30} />
         </div>
         <div
           onClick={() => setKaroserija("Minivan")}
@@ -43,7 +43,7 @@ const CarTypes = ({ setKaroserija, karoserija }) => {
             karoserija === "Minivan" && "shadow bg-slate-200/70"
           } cursor-pointer`}
         >
-          <Image src={minivan} width={50} height={30} />
+          <Image alt="Minivan" src={minivan} width={50} height={30} />
         </div>
         <div
           onClick={() => setKaroserija("Cabrio")}
@@ -51,7 +51,7 @@ const CarTypes = ({ setKaroserija, karoserija }) => {
             karoserija === "Cabrio" && "shadow bg-slate-200/70"
           } cursor-pointer`}
         >
-          <Image src={cabrio} width={50} height={30} />
+          <Image alt="Cabrio" src={cabrio} width={50} height={30} />
         </div>
         <div
           onClick={() => setKaroserija("Suv")}
@@ -59,7 +59,7 @@ const CarTypes = ({ setKaroserija, karoserija }) => {
             karoserija === "Suv" && "shadow bg-slate-200/70"
           } cursor-pointer`}
         >
-          <Image src={suv} width={50} height={30} className />
+          <Image alt="Suv" src={suv} width={50} height={30} className />
         </div>
       </div>
     </div>

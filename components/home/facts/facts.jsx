@@ -12,7 +12,7 @@ const Facts = () => {
         </div>
         <Image
           src={amg}
-          alt=""
+          alt="AMG"
           className="w-40 h-full"
           width={100}
           height={"auto"}

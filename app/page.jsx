@@ -8,7 +8,7 @@ import Track from "@/components/home/track/track";
 
 export default function Home() {
   return (
-    <div className="font-[family-name:var(--font-montserrat)]">
+    <div className="font-[family-name:var(--font-montserrat)] mb-8">
       <Hero />
       <Facts />
       <Listings />

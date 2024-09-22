@@ -178,7 +178,7 @@ const SearchCard = () => {
             BRZA <br /> PRETRAGA
           </div>
 
-          <div className="flex items-center justify-between w-full">
+          <div className="flex items-center justify-between w-full flex-wrap">
             <div className="cursor-pointer px-4 text-xl font-medium text-primary w-32">
               <Image
                 src={sside}

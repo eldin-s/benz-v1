@@ -47,7 +47,7 @@ const Slider = () => {
 
   return (
     <div className="mt-8 xl:mt-0">
-      <Image src={amg} alt="" className="w-28" width={100} height={"auto"} />
+      <Image src={amg} alt="AMG" className="w-28" width={100} height={"auto"} />
 
       <h2>
         Mercedes Benz{" "}

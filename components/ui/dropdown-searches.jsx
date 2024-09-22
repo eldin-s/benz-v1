@@ -36,11 +36,11 @@ const DropdownSearches = ({
   return (
     <div>
       <div className="flex items-center gap-x-4 flex-wrap">
-        <div>
+        <div className="flex-1">
           <select
             name="odGodine"
             id=""
-            className="border rounded-2xl border-gray-400 px-2 py-4 mt-4"
+            className="border rounded-2xl border-gray-400 px-2 py-4 mt-4 w-full"
             onChange={(e) => setOdGodine(e.target.value)}
           >
             <option value="">Od godine</option>
@@ -54,11 +54,11 @@ const DropdownSearches = ({
           </select>
         </div>
 
-        <div>
+        <div className="flex-1">
           <select
             name=""
             id=""
-            className="border rounded-2xl border-gray-400 px-2 py-4 mt-4"
+            className="border rounded-2xl border-gray-400 px-2 py-4 mt-4 w-full"
             onChange={(e) => setDoGodine(e.target.value)}
           >
             <option value="">Do godine</option>
@@ -72,11 +72,11 @@ const DropdownSearches = ({
           </select>
         </div>
 
-        <div>
+        <div className="flex-1">
           <select
             name=""
             id=""
-            className="border rounded-2xl border-gray-400 px-2 py-4 mt-4"
+            className="border rounded-2xl border-gray-400 px-2 py-4 mt-4 w-full"
             onChange={(e) => setVrstaGoriva(e.target.value)}
           >
             <option value="">Vrsta goriva</option>
@@ -89,33 +89,33 @@ const DropdownSearches = ({
       </div>
 
       <div className="flex items-center gap-4 flex-wrap">
-        <div>
+        <div className="flex-1">
           <select
             name=""
             id=""
-            className="border rounded-2xl border-gray-400 px-2 py-4 mt-4"
+            className="border rounded-2xl border-gray-400 px-2 py-4 mt-4 w-full"
             onChange={(e) => setOdCene(e.target.value)}
           >
             {getPriceOptions()}
           </select>
         </div>
 
-        <div>
+        <div className="flex-1">
           <select
             name=""
             id=""
-            className="border rounded-2xl border-gray-400 px-2 py-4 mt-4"
+            className="border rounded-2xl border-gray-400 px-2 py-4 mt-4 w-full"
             onChange={(e) => setDoCene(e.target.value)}
           >
             {getPriceOptions()}
           </select>
         </div>
 
-        <div>
+        <div className="flex-1">
           <select
             name=""
             id=""
-            className="border rounded-2xl border-gray-400 px-2 py-4 mt-4"
+            className="border rounded-2xl border-gray-400 px-2 py-4 mt-4 w-full"
             onChange={(e) => setKaroserija(e.target.value)}
           >
             <option value="">Karoserija</option>

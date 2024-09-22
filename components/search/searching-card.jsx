@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import mercedes from "@/app/assets//Mercedes-Logo.png";
 import { FaAngleDown } from "react-icons/fa6";
 
@@ -40,8 +40,6 @@ const SearchingCard = () => {
   const [odCene, setOdCene] = useState(odCeneQuery || "");
   const [doCene, setDoCene] = useState(doCeneQuery || "");
   const [karoserija, setKaroserija] = useState(karoserijaQuery || "");
-
-  console.log(karoserija);
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
@@ -109,13 +107,13 @@ const SearchingCard = () => {
 
   return (
     <div>
-      <div className="flex w-full gap-4 justify-between mb-4">
-        <div className="py-8 px-4 rounded-3xl mb-2 bg-white text-black flex justify-between gap-4 flex-1">
+      <div className="sm:flex w-full gap-4 justify-between mb-4 flex-wrap">
+        <div className="py-8 px-4 rounded-3xl mb-2 bg-white text-black flex justify-between gap-4 flex-1 flex-wrap">
           {/* CARD BODY */}
           <div className="flex-1 space-y-10">
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid lg:grid-cols-2 gap-4">
               <div
-                className="flex items-center border rounded-2xl border-primary relative pr-10 w-full"
+                className="flex items-center border rounded-2xl border-primary relative pr-10 max-w-full"
                 onClick={toggleDropdown}
               >
                 <div className="w-18 border-r border-gray-300">
@@ -207,8 +205,8 @@ const SearchingCard = () => {
               </div>
             </div>
 
-            <div className="grid grid-cols-2 gap-4 mb">
-              <div className="flex w-full">
+            <div className="grid lg:grid-cols-2 gap-4 mb">
+              <div className="flex max-w-full">
                 <select
                   name=""
                   id=""
@@ -229,7 +227,7 @@ const SearchingCard = () => {
                 </select>
               </div>
 
-              <div className="w-full">
+              <div className="max-w-full">
                 <select
                   name=""
                   id=""
@@ -250,7 +248,7 @@ const SearchingCard = () => {
                 BRZA PRETRAGA
               </div>
 
-              <div className="flex items-center justify-between w-full">
+              <div className="flex items-center justify-between w-full flex-wrap">
                 <div className="cursor-pointer px-4 text-xl font-medium text-primary w-32">
                   <Image
                     src={sside}

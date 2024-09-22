@@ -1,12 +1,10 @@
 "use client";
 
+import Link from "next/link";
 import { useSearch } from "./useSearch";
-import { useEffect } from "react";
 
 const ListingCard = () => {
   const { data, loading } = useSearch();
-
-  console.log(data);
 
   if (loading) {
     return <p className="h-screen">Učitavanje...</p>;
@@ -17,11 +15,13 @@ const ListingCard = () => {
   }
 
   return (
-    <>
+    <div className="grid grid-cols-2 md:grid-cols-1 gap-x-4">
       {data.map((car) => (
-        <Card car={car} key={car.id} />
+        <Link href={`cars/${car.id}`} key={car.id}>
+          <Card car={car} />
+        </Link>
       ))}
-    </>
+    </div>
   );
 };
 
@@ -29,20 +29,27 @@ export default ListingCard;
 
 const Card = ({ car }) => {
   return (
-    <div className="">
-      <div className="bg-bgShade w-full rounded-2xl relative flex overflow-hidden border border-transparent hover:border hover:border-primary">
+    <div className="mt-10">
+      <div className="bg-bgShade w-full rounded-2xl relative flex md:flex-row flex-col overflow-hidden border border-transparent hover:border hover:border-primary">
         <div
-          className="bg-cover bg-center bg-no-repeat h-[350px] w-full"
+          className="bg-cover bg-center bg-no-repeat md:h-[350px] h-[230px] w-full"
           style={{
             backgroundImage: `url('${car.car_images[0]}')`,
           }}
         ></div>
 
         <div className="py-3 px-6 w-full">
-          <h3 className="pb-3">{car.model}</h3>
-          <hr />
+          <h3 className="pb-3 flex justify-between text-lg">
+            {car.model}
+            <div className="pt-2 md:hidden ">
+              <span className="font-bold text-primary text-base">
+                {!car.price ? "UPIT" : car.price}
+              </span>
+            </div>
+          </h3>
+          <hr className="hidden md:block" />
 
-          <div className="flex items-start justify-between gap-2 pt-2">
+          <div className="md:flex hidden items-start justify-between gap-2 pt-2">
             <div>
               <div className="flex items-center gap-2">
                 <p>{car.production_year}</p>

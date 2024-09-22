@@ -11,7 +11,7 @@ const Dashboard = async () => {
   }
 
   return (
-    <section className="mt-20 max-w-[80rem] mx-auto px-9">
+    <section className="mt-20 max-w-[80rem] mx-auto px-9 mb-8">
       <DashboardLayout userId={data?.user?.id} />
     </section>
   );

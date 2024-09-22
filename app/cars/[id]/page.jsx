@@ -25,7 +25,7 @@ const SingleCar = () => {
   return (
     <section className="mt-20 max-w-[80rem] mx-auto px-9 mb-20">
       {car && car.car_images ? (
-        <ImageSlider images={car.car_images} />
+        <ImageSlider images={car.car_images} alt="Mercedes" />
       ) : (
         <p>Loading...</p>
       )}

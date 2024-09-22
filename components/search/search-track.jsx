@@ -36,12 +36,12 @@ const SearchTrack = ({ carState, setCarState }) => {
   };
 
   return (
-    <div className="flex items-center gap-6">
+    <div className="flex items-center flex-col md:flex-row gap-6 ">
       <div className="bg-bgShade rounded-2xl grid grid-cols-3 justify-items-center w-full">
         <div
           className={`${
             carState === "Sve" && "border-b border-primary"
-          } font-light px-10 py-4 cursor-pointer w-11/12 text-center
+          } font-light px-10 py-4 cursor-pointer sm:w-10/12 w-9/12 text-center
         `}
           onClick={() => handleClick("Sve")}
         >
@@ -50,7 +50,7 @@ const SearchTrack = ({ carState, setCarState }) => {
         <div
           className={`${
             carState === "Novo" && "border-b border-primary"
-          } font-light px-10 py-4 w-11/12 text-center cursor-pointer`}
+          } font-light px-6 py-4 sm:w-10/12 w-9/12 text-center cursor-pointer`}
           onClick={() => handleClick("Novo")}
         >
           Novo
@@ -58,14 +58,14 @@ const SearchTrack = ({ carState, setCarState }) => {
         <div
           className={`${
             carState === "Polovno" && "border-b border-primary"
-          } font-light px-10 py-4 cursor-pointer w-11/12 text-center`}
+          } font-light px-10 py-4 cursor-pointer sm:w-10/12 w-9/12text-center`}
           onClick={() => handleClick("Polovno")}
         >
           Polovno
         </div>
       </div>
 
-      <div className="w-1/2 flex items-center justify-end gap-4">
+      <div className="md:w-1/2 flex items-center justify-end gap-4">
         <p>Sortiraj po:</p>
 
         <div
