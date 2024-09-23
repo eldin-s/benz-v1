@@ -91,7 +91,7 @@ const Slider = () => {
         />
       </div>
 
-      <div className="flex items-center justify-between gap-6">
+      <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
         <div className="flex items-center gap-4">
           <button onClick={prevSlide}>
             <IoIosArrowBack />

@@ -26,13 +26,21 @@ const Listings = () => {
       <div className="grid-display gap-2 gap-y-9 text-sm">
         <div className="item1">
           <Link href={`cars/${cars[0]?.id}`}>
-            <CarCard key={0} listing={cars[0]} />
+            <CarCard
+              key={0}
+              listing={cars[0]}
+              className={"h-[200px] md:h-[350px] lg:h-[450px]"}
+            />
           </Link>
         </div>
         <div className="grid md:grid-cols-2 gap-4 text-sm">
           {cars.slice(1).map((car, index) => (
             <Link href={`cars/${car.id}`} key={car.id}>
-              <CarCard key={index + 1} listing={car} className="h-[161px]" />
+              <CarCard
+                key={index + 1}
+                listing={car}
+                className="h-[200px] md:h-[161px]"
+              />
             </Link>
           ))}
         </div>

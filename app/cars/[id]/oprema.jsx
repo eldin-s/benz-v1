@@ -6,7 +6,7 @@ const Oprema = () => {
       <h4 className="text-xl py-4 px-2 mb-4 tracking-wider border-b border-primary ">
         Oprema
       </h4>
-      <div className="flex justify-between flex-wrap gap-16">
+      <div className="flex justify-between flex-wrap gap-x-16 gap-y-6">
         <div>
           <p>Branici u boji auta</p>
           <p>Servo volan</p>

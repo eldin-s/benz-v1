@@ -11,7 +11,7 @@ const DisplayCard2 = () => {
           <Image
             src={highquality}
             alt="percent"
-            className="w-24 absolute -z-1 left-24 md:left-10 xl:left-32 top-6"
+            className="w-24 absolute -z-1left-0 sm:left-16 md:left-10 xl:left-32 top-6"
           />
           <Image src={gwagon} alt="" className="w-72 absolute top-20 -left-2" />
         </div>

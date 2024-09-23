@@ -76,7 +76,7 @@ const ImageSlider = ({ images }) => {
       ></div>
 
       {/* Left and Right buttons */}
-      <div className="flex justify-between absolute bottom-6 w-full">
+      <div className="flex justify-between absolute bottom-0 md:bottom-6 lg:bottom-0 xl:bottom-0 w-full">
         <button
           className="h-fit rounded-xl bg-bgShade border border-primary mx-1 text-primary px-2 py-9 group z-50"
           onClick={prevSlide}
@@ -92,9 +92,9 @@ const ImageSlider = ({ images }) => {
       </div>
 
       {/* Thumbnails */}
-      <div className="mt-4 w-10/12 mx-auto">
+      <div className="mt-4 w-9/12 sm:10/12 mx-auto">
         <div
-          className="flex gap-4 overflow-x-auto no-scrollbar"
+          className="flex items-center justify-center gap-1 sm:gap-3 overflow-x-auto no-scrollbar"
           ref={thumbnailContainerRef}
         >
           {images.map((image, index) => (

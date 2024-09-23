@@ -32,7 +32,7 @@ const SingleCar = () => {
 
   return (
     <section className="mt-20 max-w-[80rem] mx-auto px-9 mb-20">
-      <div className="flex justify-between gap-6">
+      <div className="flex justify-between flex-col md:flex-row gap-6">
         {car && car.car_images ? (
           <ImageSlider images={car.car_images} alt="Mercedes" />
         ) : (
@@ -67,7 +67,7 @@ const SingleCar = () => {
 
           <div className="w-full flex items-center flex-col py-8 gap-4">
             <p className="text-center text-sm text-gray-400">
-              Ukoliko vam je potrebna pomoc kontaktirajte nas
+              Ukoliko vam je potrebna <br /> pomoc kontaktirajte nas
             </p>
             <ButtonOutline>
               <IoCall className="text-primary" />
@@ -91,7 +91,7 @@ const SingleCar = () => {
         <h4 className="text-xl py-4 px-2 mb-4 tracking-wider border-b border-primary ">
           INFORMACIJE
         </h4>
-        <div className="grid grid-cols-2 gap-16">
+        <div className="grid sm:grid-cols-2 gap-16">
           <div>
             <div className="flex justify-between gap-2 border-b border-gray-400 py-1">
               <span>Stanje:</span>

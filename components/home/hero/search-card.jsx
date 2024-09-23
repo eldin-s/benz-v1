@@ -19,7 +19,7 @@ const SearchCard = () => {
   const router = useRouter();
 
   // Filters
-  const [model, setModel] = useState("");
+  const [model, setModel] = useState("Model");
   const [carState, setCarState] = useState("Sve");
   const [odGodine, setOdGodine] = useState("");
   const [doGodine, setDoGodine] = useState("");
@@ -79,7 +79,7 @@ const SearchCard = () => {
         <div
           className={`${
             carState === "Sve" ? "text-primary" : "text-black"
-          } font-light px-10 py-4 cursor-pointer w-full text-center
+          } font-light px-10 py-4 cursor-pointer w-full flex items-center justify-center
           `}
           onClick={() => setCarState("Sve")}
         >
@@ -88,7 +88,7 @@ const SearchCard = () => {
         <div
           className={`${
             carState === "Novo" ? "text-primary" : "text-black"
-          } font-light px-10 py-4 border-x w-full text-center border-gray-500 cursor-pointer`}
+          } font-light px-10 py-4 border-x w-full flex items-center justify-center border-gray-500 cursor-pointer`}
           onClick={() => setCarState("Novo")}
         >
           Novo
@@ -96,7 +96,7 @@ const SearchCard = () => {
         <div
           className={`${
             carState === "Polovno" ? "text-primary" : "text-black"
-          } font-light px-10 py-4 cursor-pointer w-full text-center`}
+          } font-light px-10 py-4 cursor-pointer w-full flex items-center justify-center`}
           onClick={() => setCarState("Polovno")}
         >
           Polovno
