@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { getListingsForUser } from "./actions";
 import CarCard from "@/components/ui/car-card";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const DashboardLayout = ({ userId }) => {
   const [listings, setListings] = useState([]);
@@ -21,6 +21,11 @@ const DashboardLayout = ({ userId }) => {
     getListings();
   }, [getListings]);
 
+  const router = useRouter();
+  const handleCardClick = (id) => {
+    router.push(`/cars/${id}`);
+  };
+
   if (listings.length === 0)
     return (
       <h3 className="w-full text-center text-2xl">
@@ -31,9 +36,13 @@ const DashboardLayout = ({ userId }) => {
   return (
     <div className="grid grid-cols-3 gap-6">
       {listings?.map((listing) => (
-        <Link href={`cars/${listing.id}`} key={listing.id}>
+        <div
+          key={listing.id}
+          onClick={() => handleCardClick(listing.id)}
+          className="cursor-pointer"
+        >
           <CarCard listing={listing} className={"h-[350px]"} />
-        </Link>
+        </div>
       ))}
     </div>
   );

@@ -8,7 +8,6 @@ export function useSearch() {
 
   const searchParams = useSearchParams();
 
-  // Extract parameters (replace 'paramName' with actual param names)
   const carState = searchParams.get("stanje");
   const model = searchParams.get("model");
   const yearMin = searchParams.get("odGodine");

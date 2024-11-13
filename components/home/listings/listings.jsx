@@ -1,11 +1,11 @@
 "use client";
 
-import { get5Cars } from "@/app/dashboard/actions";
+import React, { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 import CarCard from "@/components/ui/car-card";
-import Link from "next/link";
-import { useEffect, useState } from "react";
+import { getAllCars } from "@/app/dashboard/actions";
 
-const Listings = () => {
+const Cars = () => {
   const [cars, setCars] = useState([]);
 
   useEffect(() => {
@@ -14,39 +14,34 @@ const Listings = () => {
 
   const getCars = async () => {
     try {
-      const data = await get5Cars();
+      const data = await getAllCars();
       setCars(data);
     } catch (err) {
       console.log(err);
     }
   };
 
+  const router = useRouter();
+  const handleCardClick = (id) => {
+    router.push(`/cars/${id}`);
+  };
+
   return (
-    <div className="mt-20 max-w-[80rem] mx-auto px-9">
-      <div className="grid-display gap-2 gap-y-9 text-sm">
-        <div className="item1">
-          <Link href={`cars/${cars[0]?.id}`}>
-            <CarCard
-              key={0}
-              listing={cars[0]}
-              className={"h-[200px] md:h-[350px] lg:h-[450px]"}
-            />
-          </Link>
-        </div>
-        <div className="grid md:grid-cols-2 gap-4 text-sm">
-          {cars.slice(1).map((car, index) => (
-            <Link href={`cars/${car.id}`} key={car.id}>
-              <CarCard
-                key={index + 1}
-                listing={car}
-                className="h-[200px] md:h-[161px]"
-              />
-            </Link>
-          ))}
-        </div>
+    <section className="mt-20 max-w-[80rem] mx-auto px-9 mb-8">
+      <h1>Oglasi:</h1>
+      <div className="grid xl:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-6 mb-10">
+        {cars?.slice(1).map((car) => (
+          <div
+            key={car.id}
+            onClick={() => handleCardClick(car.id)}
+            className="cursor-pointer"
+          >
+            <CarCard listing={car} className="h-[220px]" />
+          </div>
+        ))}
       </div>
-    </div>
+    </section>
   );
 };
 
-export default Listings;
+export default Cars;

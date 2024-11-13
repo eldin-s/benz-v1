@@ -1,10 +1,15 @@
 "use client";
 
-import Link from "next/link";
 import { useSearch } from "./useSearch";
+import { useRouter } from "next/navigation";
 
 const ListingCard = () => {
   const { data, loading } = useSearch();
+
+  const router = useRouter();
+  const handleCardClick = (id) => {
+    router.push(`/cars/${id}`);
+  };
 
   if (loading) {
     return <p className="h-screen">Učitavanje...</p>;
@@ -17,9 +22,13 @@ const ListingCard = () => {
   return (
     <div className="grid grid-cols-2 md:grid-cols-1 gap-x-4">
       {data.map((car) => (
-        <Link href={`cars/${car.id}`} key={car.id}>
+        <div
+          key={car.id}
+          onClick={() => handleCardClick(car.id)}
+          className="cursor-pointer"
+        >
           <Card car={car} />
-        </Link>
+        </div>
       ))}
     </div>
   );

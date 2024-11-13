@@ -40,7 +40,7 @@ const MobileNavigation = () => {
             <FaSearch />
           </div>
         </Link>
-        <Link href="/dashboard">
+        <Link href="/">
           <div
             className={`flex items-center justify-center text-2xl w-8 h-8 rounded-full p-1 ${
               pathname === "/dashboard" ? "bg-white text-bgColor" : ""
@@ -49,7 +49,7 @@ const MobileNavigation = () => {
             <FaCog />
           </div>
         </Link>
-        <Link href="/">
+        <Link href="/dashboard">
           <div
             className={`flex items-center justify-center text-2xl w-8 h-8 rounded-full p-1 ${
               pathname === "/profile" ? "bg-white text-bgColor" : ""
