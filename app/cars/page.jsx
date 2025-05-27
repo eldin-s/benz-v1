@@ -2,11 +2,12 @@
 
 import React, { useEffect, useState } from "react";
 import { getAllCars } from "../dashboard/actions";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 import CarCard from "@/components/ui/car-card";
 
 const Cars = () => {
   const [cars, setCars] = useState([]);
+  const router = useRouter();
 
   useEffect(() => {
     getCars();
@@ -27,9 +28,13 @@ const Cars = () => {
 
       <div className=" grid xl:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-6 mb-10">
         {cars?.slice(1).map((car, index) => (
-          <Link href={`cars/${car.id}`} key={car.id}>
+          <div
+            key={car.id}
+            onClick={() => router.push(`cars/${car.id}`)}
+            style={{ cursor: "pointer" }}
+          >
             <CarCard key={index + 1} listing={car} className="h-[220px]" />
-          </Link>
+          </div>
         ))}
       </div>
     </section>

@@ -14,32 +14,34 @@ import CarTypes from "./car-types";
 import BigButton from "./big-button";
 import SearchTrack from "./search-track";
 
-const SearchingCard = () => {
+const SearchingCard = ({searchParams, listingNames}) => {
   const [isOpen, setIsOpen] = useState(false);
   const currentYear = new Date().getFullYear();
-  const params = new URLSearchParams();
 
   const router = useRouter();
   const pathname = usePathname();
 
-  // Filters
-  const carStateQuery = params.get("stanje");
-  const modelQuery = params.get("model");
-  const odGodineQuery = params.get("odGodine");
-  const doGodineQuery = params.get("doGodine");
-  const vrstaGorivaQuery = params.get("vrstaGoriva");
-  const odCeneQuery = params.get("odCene");
-  const doCeneQuery = params.get("doCene");
-  const karoserijaQuery = params.get("karoserija");
+  // Filters - use searchParams directly
+  const carStateQuery = searchParams?.stanje;
+  const modelQuery = searchParams?.model;
+  const odGodineQuery = searchParams?.odGodine;
+  const doGodineQuery = searchParams?.doGodine;
+  const vrstaGorivaQuery = searchParams?.vrstaGoriva;
+  const odCeneQuery = searchParams?.odCene;
+  const doCeneQuery = searchParams?.doCene;
+  const karoserijaQuery = searchParams?.karoserija;
 
   const [carState, setCarState] = useState(carStateQuery || "Sve");
-  const [model, setModel] = useState(modelQuery || "Model");
+  const [model, setModel] = useState(modelQuery || "Sve");
   const [odGodine, setOdGodine] = useState(odGodineQuery || "");
   const [doGodine, setDoGodine] = useState(doGodineQuery || "");
   const [vrstaGoriva, setVrstaGoriva] = useState(vrstaGorivaQuery || "");
   const [odCene, setOdCene] = useState(odCeneQuery || "");
   const [doCene, setDoCene] = useState(doCeneQuery || "");
   const [karoserija, setKaroserija] = useState(karoserijaQuery || "");
+
+  console.log("od cards", listingNames)
+  console.log("DO cards", doCene)
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
@@ -72,6 +74,10 @@ const SearchingCard = () => {
   const handleSearch = () => {
     // Start with an empty URLSearchParams to avoid duplicates
     const params = new URLSearchParams();
+
+    if (model && model !== "Sve") {
+      params.set("model", model);
+    }
 
     if (carState) {
       params.set("stanje", carState);
@@ -137,33 +143,24 @@ const SearchingCard = () => {
                 {isOpen && (
                   <div className="absolute bottom-0 translate-y-full left-0 right-0 z-20 mt-2 bg-white border border-primary rounded-lg shadow-lg w-full">
                     <ul>
-                      <li
+                      <li 
                         className="px-4 py-2 cursor-pointer hover:font-bold"
-                        onClick={() => {
-                          setIsOpen(false);
-                          setModel("GLE");
-                        }}
+                        onClick={() => setModel("Sve")}
                       >
-                        GLE
+                        Sve
                       </li>
-                      <li
-                        className="px-4 py-2 cursor-pointer hover:font-bold"
-                        onClick={() => {
-                          setIsOpen(false);
-                          setModel("G-SQUARED");
-                        }}
-                      >
-                        G-SQUARED
-                      </li>
-                      <li
-                        className="px-4 py-2 cursor-pointer hover:font-bold"
-                        onClick={() => {
-                          setIsOpen(false);
-                          setModel("S-Class 550");
-                        }}
-                      >
-                        S-Class 550
-                      </li>
+                      {listingNames?.map((listing) => (
+                        <li
+                          key={listing.id}
+                          className="px-4 py-2 cursor-pointer hover:font-bold"
+                          onClick={() => {
+                            setIsOpen(false);
+                            setModel(listing.model);
+                          }}
+                        >
+                          {listing.model}
+                        </li>  
+                      ))}
                     </ul>
                   </div>
                 )}
@@ -208,16 +205,17 @@ const SearchingCard = () => {
             <div className="grid lg:grid-cols-2 gap-4 mb">
               <div className="flex max-w-full">
                 <select
-                  name=""
+                  name="odCene"
                   id=""
                   className="border rounded-s-2xl border-gray-400 px-2 py-4 mt-4 w-full"
                   onChange={(e) => setOdCene(e.target.value)}
                 >
+                  <option value="">0</option>
                   {getPriceOptions()}
                 </select>
 
                 <select
-                  name=""
+                  name="doCene"
                   id=""
                   className="border rounded-e-2xl border-gray-400 px-2 py-4 mt-4 w-full"
                   onChange={(e) => setDoCene(e.target.value)}
@@ -229,7 +227,7 @@ const SearchingCard = () => {
 
               <div className="max-w-full">
                 <select
-                  name=""
+                  name="vrstaGoriva"
                   id=""
                   className="border rounded-2xl border-gray-400 px-2 py-4 mt-4 w-full"
                   onChange={(e) => setVrstaGoriva(e.target.value)}
@@ -249,7 +247,9 @@ const SearchingCard = () => {
               </div>
 
               <div className="flex items-center justify-between w-full flex-wrap">
-                <div className="cursor-pointer px-4 text-xl font-medium text-primary w-32">
+                <div className="cursor-pointer px-4 text-xl font-medium text-primary w-32"
+                  onClick={() => setModel("S 350")}
+                >
                   <Image
                     src={sside}
                     alt="Merceds"
@@ -258,7 +258,9 @@ const SearchingCard = () => {
                     height={"auto"}
                   />
                 </div>
-                <div className="cursor-pointer px-4 text-xl font-medium text-primary w-32">
+                <div className="cursor-pointer px-4 text-xl font-medium text-primary w-32"
+                  onClick={() => setModel("G 500")}
+                >
                   <Image
                     src={gside}
                     alt="Merceds"
@@ -267,7 +269,9 @@ const SearchingCard = () => {
                     height={"auto"}
                   />
                 </div>
-                <div className="cursor-pointer px-4 text-xl font-medium text-primary w-32">
+                <div className="cursor-pointer px-4 text-xl font-medium text-primary w-32"
+                  onClick={() => setModel("GLE 400")}
+                >
                   <Image
                     src={gleside}
                     alt="Merceds"
@@ -276,7 +280,9 @@ const SearchingCard = () => {
                     height={"auto"}
                   />
                 </div>
-                <div className="cursor-pointer px-4 text-xl font-medium text-primary w-32">
+                <div className="cursor-pointer px-4 text-xl font-medium text-primary w-32"
+                  onClick={() => setModel("GLS 400")}
+                >
                   <Image
                     src={glsside}
                     alt="Merceds"

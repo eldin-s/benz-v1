@@ -5,6 +5,7 @@ import { createClient } from "@/lib/supabase/server";
 const supabase = createClient();
 
 export async function getCarsWithFilters({
+  model,
   yearRange,
   priceRange,
   fuelType,
@@ -12,6 +13,8 @@ export async function getCarsWithFilters({
   carState,
 }) {
   let query = supabase.from("cars").select("*");
+
+  console.log("Fetch", model)
 
   // Apply filters if they are provided
   if (yearRange?.min !== undefined || yearRange?.max !== undefined) {
@@ -47,6 +50,10 @@ export async function getCarsWithFilters({
 
   if (carState) {
     query = query.eq("car_state", carState);
+  }
+
+  if (model) {
+    query = query.ilike("model", `%${model}%`);
   }
 
   const { data: cars, error } = await query;

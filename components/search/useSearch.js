@@ -48,7 +48,7 @@ export function useSearch() {
     }
 
     fetchData();
-  }, [carState, yearMin, yearMax, priceMin, priceMax, fuelType, carType]);
+  }, [carState, yearMin, yearMax, priceMin, priceMax, fuelType, carType, model]);
 
   return { data, loading };
 }

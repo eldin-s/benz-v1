@@ -1,7 +1,10 @@
 import ListingCard from "@/components/search/listing-card";
 import SearchingCard from "@/components/search/searching-card";
+import { getAllListingNames } from "@/libs/actions/listingnames";
 
-const Search = () => {
+const Search = async ({searchParams}) => {
+  const listingNames = await getAllListingNames();
+
   return (
     <section className="mt-12 max-w-[70rem] mx-auto relative p-8 space-y-10 mb-8">
       <div className="bg-gray-300 rounded-3xl search-bg mb-16">
@@ -10,7 +13,7 @@ const Search = () => {
         </h2>
       </div>
 
-      <SearchingCard />
+      <SearchingCard searchParams={searchParams} listingNames={listingNames} />
       <ListingCard />
     </section>
   );

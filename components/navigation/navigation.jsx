@@ -27,16 +27,21 @@ const Navigation = async () => {
         </div>
 
         <div className="flex items-center gap-6">
-          <Link href={"/dashboard"}>
-            <div className="flex items-center gap-4">
-              <FaRegUser className="text-primary" />
-              {data.user ? (
-                data.user.email
-              ) : (
-                <Link href="/auth/login">Uloguj se</Link>
-              )}
-            </div>
-          </Link>
+          {data.user ? (
+            <Link href={"/dashboard"}>
+              <span className="flex items-center gap-4">
+                <FaRegUser className="text-primary" />
+                {data.user.email}
+              </span>
+            </Link>
+          ) : (
+            <Link href="/auth/login">
+              <span className="flex items-center gap-4">
+                <FaRegUser className="text-primary" />
+                Uloguj se
+              </span>
+            </Link>
+          )}
           <Link href="/dashboard/add-listing">
             <ButtonOutline>+ DODAJ OGLAS</ButtonOutline>
           </Link>

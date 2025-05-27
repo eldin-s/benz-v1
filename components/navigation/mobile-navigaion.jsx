@@ -14,49 +14,49 @@ const MobileNavigation = () => {
     <div className="fixed bottom-0 left-0 w-full bg-bgShade md:hidden z-50">
       <div className="flex justify-around py-2">
         <Link href="/">
-          <div
+          <span
             className={`flex items-center justify-center w-8 h-8 rounded-full text-2xl p-1 ${
               pathname === "/" ? "bg-white text-bgColor" : ""
             }`}
           >
             <GoHomeFill />
-          </div>
+          </span>
         </Link>
         <Link href="/">
-          <div
+          <span
             className={`flex items-center justify-center text-2xl w-8 h-8 rounded-full p-1 ${
               pathname === "/parking" ? "bg-white text-bgColor" : ""
             }`}
           >
             <TbParkingCircleFilled />
-          </div>
+          </span>
         </Link>
         <Link href="/search">
-          <div
+          <span
             className={`flex items-center justify-center text-xl w-8 h-8 rounded-full p-1 ${
               pathname === "/search" ? "bg-white text-bgColor" : ""
             }`}
           >
             <FaSearch />
-          </div>
+          </span>
         </Link>
         <Link href="/">
-          <div
+          <span
             className={`flex items-center justify-center text-2xl w-8 h-8 rounded-full p-1 ${
               pathname === "/dashboard" ? "bg-white text-bgColor" : ""
             }`}
           >
             <FaCog />
-          </div>
+          </span>
         </Link>
         <Link href="/dashboard">
-          <div
+          <span
             className={`flex items-center justify-center text-2xl w-8 h-8 rounded-full p-1 ${
               pathname === "/profile" ? "bg-white text-bgColor" : ""
             }`}
           >
             <FaRegUser />
-          </div>
+          </span>
         </Link>
       </div>
     </div>

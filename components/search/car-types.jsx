@@ -60,9 +60,9 @@ const CarTypes = ({ setKaroserija, karoserija }) => {
           <Image alt="Cabrio" src={cabrio} width={50} height={30} />
         </div>
         <div
-          onClick={() => setKaroserija("Suv")}
+          onClick={() => setKaroserija("SUV")}
           className={clsx(
-            karoserija === "Suv" && "shadow bg-slate-200/70",
+            karoserija === "Suv" && "shadow bg-slate-200/20",
             "cursor-pointer"
           )}
         >
