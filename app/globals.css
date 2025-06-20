@@ -103,6 +103,24 @@ input[type='radio']:checked:after {
   border: 1px solid gray;
 }
 
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #0f141e #19212f;
+}
+
+/* Chrome, Edge, Safari */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+::-webkit-scrollbar-thumb {
+  background: #0f141e;
+  border-radius: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #19212f;
+  border-radius: 8px;
+}
 
 @media (prefers-color-scheme: dark) {
   :root {

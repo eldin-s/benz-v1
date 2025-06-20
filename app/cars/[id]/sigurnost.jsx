@@ -1,30 +1,13 @@
-import React from "react";
-
-const Sigurnost = () => {
+const Sigurnost = ({safety}) => {
   return (
     <div className="bg-bgShade p-6 mt-8 rounded-2xl">
       <h4 className="text-xl py-4 px-2 mb-4 tracking-wider border-b border-primary ">
-        Sigurnost
+        Sigurnost:
       </h4>
-      <div className="flex justify-between flex-wrap gap-x-16 gap-y-6">
-        <div>
-          <p>Airbag za vozaca</p>
-          <p>ABS</p>
-          <p>Centralno zakljucavanje</p>
-          <p>Automatsko kocenje</p>
-        </div>
-        <div>
-          <p>Airbag za vozaca</p>
-          <p>ABS</p>
-          <p>Centralno zakljucavanje</p>
-          <p>Automatsko kocenje</p>
-        </div>
-        <div>
-          <p>Airbag za vozaca</p>
-          <p>ABS</p>
-          <p>Centralno zakljucavanje</p>
-          <p>Automatsko kocenje</p>
-        </div>
+      <div className="grid md:grid-cols-3 gap-x-16 gap-y-2">
+        {safety && safety.length > 0 && safety.map((item, index) => (
+          <p key={index}>{item}</p>
+        ))}
       </div>
     </div>
   );

@@ -34,7 +34,7 @@ const DashboardLayout = ({ userId }) => {
     );
 
   return (
-    <div className="grid grid-cols-3 gap-6">
+    <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
       {listings?.map((listing) => (
         <div
           key={listing.id}

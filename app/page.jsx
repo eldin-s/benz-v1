@@ -7,7 +7,7 @@ import Track from "@/components/home/track/track";
 
 export default function Home() {
   return (
-    <div className={`${bebasNeue.className} ${oswald.className} mb-8`}>
+    <div className="mb-8">
       <Hero />
       <Facts />
       <Listings />
