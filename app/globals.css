@@ -29,7 +29,6 @@ h2 {
 
 h3 {
   font-size: 2.2rem;
-  font-weight: 600;
   line-height: 38px;
   padding: 1rem 0;
 }
@@ -115,7 +114,7 @@ input[type='radio']:checked:after {
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: "Montserrat";
+  font-family: "Bebas Neue";
 }
 
 @layer utilities {

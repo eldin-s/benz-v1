@@ -66,7 +66,7 @@ const SingleCar = () => {
           </div>
 
           <div className="w-full flex items-center flex-col py-8 gap-4">
-            <p className="text-center text-sm text-gray-400">
+            <p className="text-center text-sm text-gray-400 font-bebas">
               Ukoliko vam je potrebna <br /> pomoc kontaktirajte nas
             </p>
             <ButtonOutline>
@@ -95,64 +95,64 @@ const SingleCar = () => {
           <div>
             <div className="flex justify-between gap-2 border-b border-gray-400 py-1">
               <span>Stanje:</span>
-              <span className="font-semibold">Polovno</span>
+              <span className="">Polovno</span>
             </div>
 
             <div className="flex justify-between gap-2 border-b border-gray-400 py-1">
               <span>Model:</span>
-              <span className="font-semibold">GLE 63 AMG</span>
+              <span className="">GLE 63 AMG</span>
             </div>
 
             <div className="flex justify-between gap-2 border-b border-gray-400 py-1">
               <span>Menjac:</span>
-              <span className="font-semibold">Automatik</span>
+              <span className="">Automatik</span>
             </div>
 
             <div className="flex justify-between gap-2 border-b border-gray-400 py-1">
               <span>Godiste:</span>
-              <span className="font-semibold">2023</span>
+              <span className="">2023</span>
             </div>
 
             <div className="flex justify-between gap-2 border-b border-gray-400 py-1">
               <span>Kilometraza:</span>
-              <span className="font-semibold">2.300km</span>
+              <span className="">2.300km</span>
             </div>
 
             <div className="flex justify-between gap-2 border-b border-gray-400 py-1">
               <span>Karoserija:</span>
-              <span className="font-semibold">Dzip/Suv</span>
+              <span className="">Dzip/Suv</span>
             </div>
           </div>
 
           <div>
             <div className="flex justify-between gap-2 border-b border-gray-400 py-1">
               <span>Kubikaza:</span>
-              <span className="font-semibold">3982cm</span>
+              <span className="">3982cm</span>
             </div>
 
             <div className="flex justify-between gap-2 border-b border-gray-400 py-1">
               <span>Snaga:</span>
-              <span className="font-semibold">450/612 (k@/KS)</span>
+              <span className="">450/612 (k@/KS)</span>
             </div>
 
             <div className="flex justify-between gap-2 border-b border-gray-400 py-1">
               <span>Klima:</span>
-              <span className="font-semibold">Automatska</span>
+              <span className="">Automatska</span>
             </div>
 
             <div className="flex justify-between gap-2 border-b border-gray-400 py-1">
               <span>Boja:</span>
-              <span className="font-semibold">Crna</span>
+              <span className="">Crna</span>
             </div>
 
             <div className="flex justify-between gap-2 border-b border-gray-400 py-1">
               <span>Pogon:</span>
-              <span className="font-semibold">4x4</span>
+              <span className="">4x4</span>
             </div>
 
             <div className="flex justify-between gap-2 border-b border-gray-400 py-1">
               <span>Gorivo:</span>
-              <span className="font-semibold">Benzin</span>
+              <span className="">Benzin</span>
             </div>
           </div>
         </div>

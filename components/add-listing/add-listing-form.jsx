@@ -94,14 +94,14 @@ const AddListingForm = () => {
   return (
     <div className="min-h-full max-w-4xl mx-auto bg-bgShade flex justify-center items-center mt-14 rounded-lg shadow-lg overflow-hidden ">
       <div className="p-6 w-full ">
-        <h2 className="text-3xl font-semibold text-primary text-center mb-6">
+        <h2 className="text-3xl  text-primary text-center mb-6">
           Dodaj oglas
         </h2>
         <form className="space-y-4" onSubmit={handleSubmit(onSubmit)}>
           <div className="relative">
             <label
               htmlFor="name"
-              className="block text-foreground mb-1 font-bold"
+              className="block text-foreground mb-1 "
             >
               Model:
             </label>
@@ -127,7 +127,7 @@ const AddListingForm = () => {
             <div className="relative w-full">
               <label
                 htmlFor="name"
-                className="block text-foreground mb-1 font-bold"
+                className="block text-foreground mb-1 "
               >
                 Linija
               </label>
@@ -155,7 +155,7 @@ const AddListingForm = () => {
             <div className="relative w-full">
               <label
                 htmlFor="name"
-                className="block text-foreground mb-1 font-bold"
+                className="block text-foreground mb-1 "
               >
                 Vrsta goriva
               </label>
@@ -185,7 +185,7 @@ const AddListingForm = () => {
             <div className="relative w-full">
               <label
                 htmlFor="name"
-                className="block text-foreground mb-1 font-bold"
+                className="block text-foreground mb-1 "
               >
                 Pogon
               </label>
@@ -215,7 +215,7 @@ const AddListingForm = () => {
             <div className="relative w-full">
               <label
                 htmlFor="name"
-                className="block text-foreground mb-1 font-bold"
+                className="block text-foreground mb-1 "
               >
                 Kubikaža:
               </label>
@@ -240,7 +240,7 @@ const AddListingForm = () => {
             <div className="relative w-full">
               <label
                 htmlFor="name"
-                className="block text-foreground mb-1 font-bold"
+                className="block text-foreground mb-1 "
               >
                 Snaga:
               </label>
@@ -267,7 +267,7 @@ const AddListingForm = () => {
             <div className="relative w-full">
               <label
                 htmlFor="name"
-                className="block text-foreground mb-1 font-bold"
+                className="block text-foreground mb-1 "
               >
                 Obrtni moment:
               </label>
@@ -295,7 +295,7 @@ const AddListingForm = () => {
             <div className="relative w-full">
               <label
                 htmlFor="name"
-                className="block text-foreground mb-1 font-bold"
+                className="block text-foreground mb-1 "
               >
                 Godina proizvodnje:
               </label>
@@ -330,7 +330,7 @@ const AddListingForm = () => {
             <div className="relative w-full">
               <label
                 htmlFor="name"
-                className="block text-foreground mb-1 font-bold"
+                className="block text-foreground mb-1 "
               >
                 Boja:
               </label>
@@ -357,7 +357,7 @@ const AddListingForm = () => {
             <div className="relative w-full">
               <label
                 htmlFor="name"
-                className="block text-foreground mb-1 font-bold"
+                className="block text-foreground mb-1 "
               >
                 Tip:
               </label>
@@ -388,7 +388,7 @@ const AddListingForm = () => {
             <div className="relative w-full">
               <label
                 htmlFor="name"
-                className="block text-foreground mb-1 font-bold"
+                className="block text-foreground mb-1 "
               >
                 Stanje
               </label>
@@ -416,7 +416,7 @@ const AddListingForm = () => {
           <div className="relative w-full">
             <label
               htmlFor="car_images"
-              className="block text-foreground mb-1 font-bold"
+              className="block text-foreground mb-1 "
             >
               Fotografije
             </label>

@@ -41,7 +41,7 @@ const SearchTrack = ({ carState, setCarState }) => {
         <div
           className={`${
             carState === "Sve" && "border-b border-primary"
-          } font-light px-10 py-4 cursor-pointer sm:w-10/12 w-9/12 text-center
+          }  px-10 py-4 cursor-pointer sm:w-10/12 w-9/12 text-center
         `}
           onClick={() => handleClick("Sve")}
         >
@@ -50,7 +50,7 @@ const SearchTrack = ({ carState, setCarState }) => {
         <div
           className={`${
             carState === "Novo" && "border-b border-primary"
-          } font-light px-6 py-4 sm:w-10/12 w-9/12 text-center cursor-pointer`}
+          }  px-6 py-4 sm:w-10/12 w-9/12 text-center cursor-pointer`}
           onClick={() => handleClick("Novo")}
         >
           Novo
@@ -58,7 +58,7 @@ const SearchTrack = ({ carState, setCarState }) => {
         <div
           className={`${
             carState === "Polovno" && "border-b border-primary"
-          } font-light px-10 py-4 cursor-pointer sm:w-10/12 w-9/12text-center`}
+          }  px-10 py-4 cursor-pointer sm:w-10/12 w-9/12text-center`}
           onClick={() => handleClick("Polovno")}
         >
           Polovno
@@ -72,7 +72,7 @@ const SearchTrack = ({ carState, setCarState }) => {
           className="bg-bgShade flex gap-4 items-center rounded-2xl relative p-4 pr-8"
           onClick={toggleDropdown}
         >
-          <p className="cursor-pointer px-4 font-light">{sortBy}</p>
+          <p className="cursor-pointer px-4 ">{sortBy}</p>
           <div className="text-xl absolute right-2">
             <FaAngleDown />
           </div>
@@ -81,7 +81,7 @@ const SearchTrack = ({ carState, setCarState }) => {
             <div className="absolute left-0 right-0 top-14 z-20 mt-2 bg-bgShade rounded-xl shadow-lg border border-slate-800">
               <ul>
                 <li
-                  className="px-4 py-2 cursor-pointer hover:font-bold"
+                  className="px-4 py-2 cursor-pointer hover:"
                   onClick={() => {
                     setIsOpen(false);
                     setSortBy("Cena: Nize");
@@ -90,7 +90,7 @@ const SearchTrack = ({ carState, setCarState }) => {
                   Cena: Niže
                 </li>
                 <li
-                  className="px-4 py-2 cursor-pointer hover:font-bold"
+                  className="px-4 py-2 cursor-pointer hover:"
                   onClick={() => {
                     setIsOpen(false);
                     setSortBy("Cena: Vise");
@@ -99,7 +99,7 @@ const SearchTrack = ({ carState, setCarState }) => {
                   Cena: Vise
                 </li>
                 <li
-                  className="px-4 py-2 cursor-pointer hover:font-bold"
+                  className="px-4 py-2 cursor-pointer hover:"
                   onClick={() => {
                     setIsOpen(false);
                     setSortBy("Datum: Nize");
@@ -108,7 +108,7 @@ const SearchTrack = ({ carState, setCarState }) => {
                   Datum: Niže
                 </li>
                 <li
-                  className="px-4 py-2 cursor-pointer hover:font-bold"
+                  className="px-4 py-2 cursor-pointer hover:"
                   onClick={() => {
                     setIsOpen(false);
                     setSortBy("Datum: Vise");

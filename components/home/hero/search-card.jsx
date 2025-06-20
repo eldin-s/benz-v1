@@ -75,11 +75,11 @@ const SearchCard = () => {
   return (
     <div className="bg-gray-300 rounded-2xl">
       {/* CARD HEADER */}
-      <div className="grid grid-cols-3 justify-items-center  text-xl">
+      <div className="grid grid-cols-3 justify-items-center  text-xl font-bebas">
         <div
           className={`${
             carState === "Sve" ? "text-primary" : "text-black"
-          } font-light px-10 py-4 cursor-pointer w-full flex items-center justify-center
+          }  px-10 py-4 cursor-pointer w-full flex items-center justify-center
           `}
           onClick={() => setCarState("Sve")}
         >
@@ -88,7 +88,7 @@ const SearchCard = () => {
         <div
           className={`${
             carState === "Novo" ? "text-primary" : "text-black"
-          } font-light px-10 py-4 border-x w-full flex items-center justify-center border-gray-500 cursor-pointer`}
+          }  px-10 py-4 border-x w-full flex items-center justify-center border-gray-500 cursor-pointer`}
           onClick={() => setCarState("Novo")}
         >
           Novo
@@ -96,7 +96,7 @@ const SearchCard = () => {
         <div
           className={`${
             carState === "Polovno" ? "text-primary" : "text-black"
-          } font-light px-10 py-4 cursor-pointer w-full flex items-center justify-center`}
+          }  px-10 py-4 cursor-pointer w-full flex items-center justify-center`}
           onClick={() => setCarState("Polovno")}
         >
           Polovno
@@ -119,7 +119,7 @@ const SearchCard = () => {
             />
           </div>
 
-          <p className="cursor-pointer px-4 text-xl font-medium text-primary">
+          <p className="cursor-pointer px-4 text-xl  text-primary">
             {model}
           </p>
 
@@ -132,7 +132,7 @@ const SearchCard = () => {
           <div className="absolute left-0 right-0 z-20 mx-4 mt-2  bg-white border border-primary rounded-lg shadow-lg">
             <ul>
               <li
-                className="px-4 py-2 cursor-pointer hover:font-bold"
+                className="px-4 py-2 cursor-pointer hover:"
                 onClick={() => {
                   setIsOpen(false);
                   setModel("GLE");
@@ -141,7 +141,7 @@ const SearchCard = () => {
                 GLE
               </li>
               <li
-                className="px-4 py-2 cursor-pointer hover:font-bold"
+                className="px-4 py-2 cursor-pointer hover:"
                 onClick={() => {
                   setIsOpen(false);
                   setModel("G-SQUARED");
@@ -150,7 +150,7 @@ const SearchCard = () => {
                 G-SQUARED
               </li>
               <li
-                className="px-4 py-2 cursor-pointer hover:font-bold"
+                className="px-4 py-2 cursor-pointer hover:"
                 onClick={() => {
                   setIsOpen(false);
                   setModel("S-Class 550");
@@ -171,15 +171,15 @@ const SearchCard = () => {
           setKaroserija={setKaroserija}
         />
 
-        <Button onClick={handleSearch}> Pretraži</Button>
+        <Button onClick={handleSearch}>Pretraži</Button>
 
         <div className="flex items-center border rounded-2xl ">
-          <div className="w-30 h-full border-r bg-primary px-2 py-4 rounded-s-xl text-white font-semibold text-sm">
+          <div className="w-30 h-full border-r bg-primary px-2 py-4 rounded-s-xl text-white  text-sm">
             BRZA <br /> PRETRAGA
           </div>
 
           <div className="flex items-center justify-between w-full flex-wrap">
-            <div className="cursor-pointer px-4 text-xl font-medium text-primary w-32">
+            <div className="cursor-pointer px-4 text-xl  text-primary sm:w-32 w-20">
               <Image
                 src={sside}
                 alt="Merceds"
@@ -188,7 +188,7 @@ const SearchCard = () => {
                 height={"auto"}
               />
             </div>
-            <div className="cursor-pointer px-4 text-xl font-medium text-primary w-32">
+            <div className="cursor-pointer px-4 text-xl  text-primary sm:w-32 w-20">
               <Image
                 src={gside}
                 alt="Merceds"
@@ -197,7 +197,7 @@ const SearchCard = () => {
                 height={"auto"}
               />
             </div>
-            <div className="cursor-pointer px-4 text-xl font-medium text-primary w-32">
+            <div className="cursor-pointer px-4 text-xl  text-primary sm:w-32 w-20">
               <Image
                 src={gleside}
                 alt="Merceds"

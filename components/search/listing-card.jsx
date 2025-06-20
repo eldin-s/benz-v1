@@ -51,7 +51,7 @@ const Card = ({ car }) => {
           <h3 className="pb-3 flex justify-between text-lg">
             {car.model}
             <div className="pt-2 md:hidden ">
-              <span className="font-bold text-primary text-base">
+              <span className=" text-primary text-base">
                 {!car.price ? "UPIT" : car.price}
               </span>
             </div>
@@ -63,7 +63,7 @@ const Card = ({ car }) => {
               <div className="flex items-center gap-2">
                 <p>{car.production_year}</p>
                 {car.car_state === "Novo" && (
-                  <div className="bg-primary px-2 rounded-md font-semibold tracking-wider text-white">
+                  <div className="bg-primary px-2 rounded-md  tracking-wider text-white">
                     NOVO
                   </div>
                 )}
@@ -71,7 +71,7 @@ const Card = ({ car }) => {
               </div>
 
               <div className="flex items-center gap-2 mt-6">
-                <div className="bg-primary px-2 rounded-md font-semibold tracking-wider text-white">
+                <div className="bg-primary px-2 rounded-md  tracking-wider text-white">
                   Garancija
                 </div>
                 {/* )} */}
@@ -81,7 +81,7 @@ const Card = ({ car }) => {
 
             <div className="pt-2 absolute bottom-4 right-4">
               <p>Cena</p>
-              <span className="font-bold text-primary text-2xl">
+              <span className=" text-primary text-2xl">
                 {!car.price ? "UPIT" : car.price}
               </span>
             </div>

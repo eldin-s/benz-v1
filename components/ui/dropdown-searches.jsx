@@ -40,7 +40,7 @@ const DropdownSearches = ({
           <select
             name="odGodine"
             id=""
-            className="border rounded-2xl border-gray-400 px-2 py-4 mt-4 w-full"
+            className="border rounded-2xl border-gray-400 px-2 sm:py-4 py-2 mt-4 w-full font-bebas text-sm sm:text-base"
             onChange={(e) => setOdGodine(e.target.value)}
           >
             <option value="">Od godine</option>
@@ -58,7 +58,7 @@ const DropdownSearches = ({
           <select
             name=""
             id=""
-            className="border rounded-2xl border-gray-400 px-2 py-4 mt-4 w-full"
+            className="border rounded-2xl border-gray-400 px-2 sm:py-4 py-2 mt-4 w-full font-bebas text-sm sm:text-base"
             onChange={(e) => setDoGodine(e.target.value)}
           >
             <option value="">Do godine</option>
@@ -76,7 +76,7 @@ const DropdownSearches = ({
           <select
             name=""
             id=""
-            className="border rounded-2xl border-gray-400 px-2 py-4 mt-4 w-full"
+            className="border rounded-2xl border-gray-400 px-2 sm:py-4 py-2 mt-4 w-full font-bebas text-sm sm:text-base"
             onChange={(e) => setVrstaGoriva(e.target.value)}
           >
             <option value="">Vrsta goriva</option>
@@ -93,7 +93,7 @@ const DropdownSearches = ({
           <select
             name=""
             id=""
-            className="border rounded-2xl border-gray-400 px-2 py-4 mt-4 w-full"
+            className="border rounded-2xl border-gray-400 px-2 sm:py-4 py-2 mt-4 w-full font-bebas text-sm sm:text-base"
             onChange={(e) => setOdCene(e.target.value)}
           >
             {getPriceOptions()}
@@ -104,7 +104,7 @@ const DropdownSearches = ({
           <select
             name=""
             id=""
-            className="border rounded-2xl border-gray-400 px-2 py-4 mt-4 w-full"
+            className="border rounded-2xl border-gray-400 px-2 sm:py-4 py-2 mt-4 w-full font-bebas text-sm sm:text-base"
             onChange={(e) => setDoCene(e.target.value)}
           >
             {getPriceOptions()}
@@ -115,7 +115,7 @@ const DropdownSearches = ({
           <select
             name=""
             id=""
-            className="border rounded-2xl border-gray-400 px-2 py-4 mt-4 w-full"
+            className="border rounded-2xl border-gray-400 px-2 sm:py-4 py-2 mt-4 w-full font-bebas text-sm sm:text-base"
             onChange={(e) => setKaroserija(e.target.value)}
           >
             <option value="">Karoserija</option>

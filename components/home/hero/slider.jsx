@@ -49,7 +49,7 @@ const Slider = () => {
     <div className="mt-8 xl:mt-0">
       <Image src={amg} alt="AMG" className="w-28" width={100} height={"auto"} />
 
-      <h2>
+      <h2 className="font-oswald font-normal">
         Mercedes Benz{" "}
         <span className="font-bold">{images[currentIndex].name}</span>
       </h2>
@@ -58,23 +58,23 @@ const Slider = () => {
         {images[currentIndex].description}
       </p>
 
-      <div className="flex items-center gap-8 justify-center my-6 w-full">
+      <div className="flex items-center gap-8 justify-center my-6 w-full flex-wrap">
         <div className="flex items-center gap-3">
-          <PiEngine className="text-primary text-4xl" />
+          <PiEngine className="text-primary sm:text-4xl text-xl" />
           <p className="text-center text-[8px]">
             {images[currentIndex].engine}
           </p>
         </div>
 
         <div className="flex items-center gap-3">
-          <SlSpeedometer className="text-primary text-2xl" />
-          <p className="text-center text-sm font-semibold italic">
+          <SlSpeedometer className="text-primary sm:text-2xl" />
+          <p className="text-center text-sm  italic">
             {images[currentIndex].power}
           </p>
         </div>
 
         <div className="flex items-center gap-3">
-          <GoGear className="text-primary text-4xl" />
+          <GoGear className="text-primary sm:text-3xl" />
           <p className="text-center text-[8px]">
             {images[currentIndex].transmission}
           </p>
@@ -96,7 +96,7 @@ const Slider = () => {
           <button onClick={prevSlide}>
             <IoIosArrowBack />
           </button>
-          <p className="font-bold text-sm">GLE</p>
+          <p className=" text-sm">GLE</p>
 
           <Image
             src={images[currentIndex].src}

@@ -7,7 +7,7 @@ const BigButton = ({ onClick }) => {
       onClick={onClick}
     >
       <BiSearchAlt className="lg:text-7xl text-2xl h-full" />
-      <p className="font-semibold justify-self-end">Pretraži</p>
+      <p className=" justify-self-end">Pretraži</p>
     </button>
   );
 };

@@ -39,7 +39,7 @@ const SigninForm = () => {
     <div className="min-h-full max-w-4xl mx-auto bg-bgShade flex justify-center items-center mt-14 rounded-lg shadow-lg overflow-hidden ">
       <div className="p-6 w-full ">
         {error !== "" && <p className="text-center text-red-400">{error}</p>}
-        <h2 className="text-3xl font-semibold text-primary text-center mb-6">
+        <h2 className="text-3xl  text-primary text-center mb-6">
           Prijavi se
         </h2>
         <form className="space-y-4" onSubmit={handleSubmit(handleFormSubmit)}>

@@ -28,7 +28,7 @@ const CarCard = ({ listing, className }) => {
             <div className="flex items-center gap-2">
               <p>{production_year}. god</p>
               {car_state === "Novo" && (
-                <div className="bg-primary px-2 rounded-md font-semibold tracking-wider text-white">
+                <div className="bg-primary px-2 rounded-md  tracking-wider text-white">
                   NOVO
                 </div>
               )}
@@ -37,7 +37,7 @@ const CarCard = ({ listing, className }) => {
 
             <div className="pt-2">
               <p>Cena</p>
-              <span className="font-bold text-primary">
+              <span className=" text-primary">
                 {price !== "" ? "UPIT" : price}
               </span>
             </div>

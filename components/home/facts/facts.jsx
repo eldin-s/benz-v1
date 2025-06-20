@@ -7,7 +7,7 @@ const Facts = () => {
       <div className="text-xl bg-bgColor w-fit flex items-center gap-4">
         <div className=" p-2">
           <p className="border-r-2 border-primary p-9">
-            DA LI STE <span className="font-bold text-primary">ZNALI?</span>
+            DA LI STE <span className=" text-primary">ZNALI?</span>
           </p>
         </div>
         <Image
@@ -20,7 +20,7 @@ const Facts = () => {
       </div>
 
       <div className="p-9 relative flex flex-col justify-center items-center gap-2">
-        <p className="text-xl font-semibold">
+        <p className="text-xl ">
           Da li ste znali da je <span className="text-primary">AMG</span>{" "}
           tjunirao i <span className="text-primary">dizel kombi?</span>
         </p>

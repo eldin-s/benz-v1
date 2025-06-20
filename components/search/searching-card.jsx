@@ -132,7 +132,7 @@ const SearchingCard = ({searchParams, listingNames}) => {
                   />
                 </div>
 
-                <p className="cursor-pointer px-4 text-md font-medium text-primary">
+                <p className="cursor-pointer px-4 text-md  text-primary">
                   {model}
                 </p>
 
@@ -144,7 +144,7 @@ const SearchingCard = ({searchParams, listingNames}) => {
                   <div className="absolute bottom-0 translate-y-full left-0 right-0 z-20 mt-2 bg-white border border-primary rounded-lg shadow-lg w-full">
                     <ul>
                       <li 
-                        className="px-4 py-2 cursor-pointer hover:font-bold"
+                        className="px-4 py-2 cursor-pointer hover:"
                         onClick={() => setModel("Sve")}
                       >
                         Sve
@@ -152,7 +152,7 @@ const SearchingCard = ({searchParams, listingNames}) => {
                       {listingNames?.map((listing) => (
                         <li
                           key={listing.id}
-                          className="px-4 py-2 cursor-pointer hover:font-bold"
+                          className="px-4 py-2 cursor-pointer hover:"
                           onClick={() => {
                             setIsOpen(false);
                             setModel(listing.model);
@@ -242,12 +242,12 @@ const SearchingCard = ({searchParams, listingNames}) => {
             </div>
 
             <div className="flex items-center border rounded-2xl mt-8">
-              <div className="w-30 h-full px-2 py-4 rounded-s-xl  font-semibold text-sm text-nowrap">
+              <div className="w-30 h-full px-2 py-4 rounded-s-xl   text-sm text-nowrap">
                 BRZA PRETRAGA
               </div>
 
               <div className="flex items-center justify-between w-full flex-wrap">
-                <div className="cursor-pointer px-4 text-xl font-medium text-primary w-32"
+                <div className="cursor-pointer px-4 text-xl  text-primary w-32"
                   onClick={() => setModel("S 350")}
                 >
                   <Image
@@ -258,7 +258,7 @@ const SearchingCard = ({searchParams, listingNames}) => {
                     height={"auto"}
                   />
                 </div>
-                <div className="cursor-pointer px-4 text-xl font-medium text-primary w-32"
+                <div className="cursor-pointer px-4 text-xl  text-primary w-32"
                   onClick={() => setModel("G 500")}
                 >
                   <Image
@@ -269,7 +269,7 @@ const SearchingCard = ({searchParams, listingNames}) => {
                     height={"auto"}
                   />
                 </div>
-                <div className="cursor-pointer px-4 text-xl font-medium text-primary w-32"
+                <div className="cursor-pointer px-4 text-xl  text-primary w-32"
                   onClick={() => setModel("GLE 400")}
                 >
                   <Image
@@ -280,7 +280,7 @@ const SearchingCard = ({searchParams, listingNames}) => {
                     height={"auto"}
                   />
                 </div>
-                <div className="cursor-pointer px-4 text-xl font-medium text-primary w-32"
+                <div className="cursor-pointer px-4 text-xl  text-primary w-32"
                   onClick={() => setModel("GLS 400")}
                 >
                   <Image
