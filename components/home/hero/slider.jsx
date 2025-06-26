@@ -46,7 +46,7 @@ const Slider = () => {
   };
 
   return (
-    <div className="mt-8 xl:mt-0">
+    <div className="mt-8 xl:mt-0 hidden xl:block">
       <Image src={amg} alt="AMG" className="w-28" width={100} height={"auto"} />
 
       <h2 className="font-oswald font-normal">

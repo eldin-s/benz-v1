@@ -20,7 +20,7 @@ const ListingCard = () => {
   }
 
   return (
-    <div className="grid grid-cols-2 md:grid-cols-1 gap-x-4">
+    <div className="">
       {data.map((car) => (
         <div
           key={car.id}
@@ -39,51 +39,45 @@ export default ListingCard;
 const Card = ({ car }) => {
   return (
     <div className="mt-10">
-      <div className="bg-bgShade w-full rounded-2xl relative flex md:flex-row flex-col overflow-hidden border border-transparent hover:border hover:border-primary">
+      <div className="bg-bgShade w-full rounded-2xl relative flex overflow-hidden border border-transparent hover:border hover:border-primary">
         <div
-          className="bg-cover bg-center bg-no-repeat md:h-[350px] h-[230px] w-full"
+          className="bg-cover bg-center bg-no-repeat md:h-[350px] h-auto w-full"
           style={{
             backgroundImage: `url('${car.car_images[0]}')`,
           }}
         ></div>
 
-        <div className="py-3 px-6 w-full">
-          <h3 className="pb-3 flex justify-between text-lg">
+        <div className="py-3 px-6 w-full flex flex-col">
+          <h3 className="pb-3 text-lg">
             {car.model}
-            <div className="pt-2 md:hidden ">
-              <span className=" text-primary text-base">
-                {!car.price ? "UPIT" : car.price}
-              </span>
-            </div>
           </h3>
-          <hr className="hidden md:block" />
 
-          <div className="md:flex hidden items-start justify-between gap-2 pt-2">
+          <div className="flex flex-1 flex-col items-start justify-between gap-2 pt-2">
             <div>
-              <div className="flex items-center gap-2">
-                <p>{car.production_year}</p>
+              <div className="grid grid-cols-2 gap-3">
+                <p className="text-gray-400 font-light">{car.production_year} god. </p>
                 {car.car_state === "Novo" && (
                   <div className="bg-primary px-2 rounded-md  tracking-wider text-white">
                     NOVO
                   </div>
                 )}
-                <p>{car.power}</p>
-              </div>
+                <p className="text-gray-400 font-light">{car.power}</p>
 
-              <div className="flex items-center gap-2 mt-6">
-                <div className="bg-primary px-2 rounded-md  tracking-wider text-white">
-                  Garancija
-                </div>
-                {/* )} */}
-                <p>{car.fuel_type}</p>
+                <p className="text-gray-400 font-light">{car.engine_size}<sup>cm</sup> </p>
+                <p className="text-gray-400 font-light">{car.power} ks</p>
               </div>
             </div>
 
-            <div className="pt-2 absolute bottom-4 right-4">
-              <p>Cena</p>
-              <span className=" text-primary text-2xl">
-                {!car.price ? "UPIT" : car.price}
-              </span>
+            <div className="flex items-center justify-between w-full">
+              <div className="bg-primary px-2 rounded-md  tracking-wider text-white">
+                GARANCIJA
+              </div>
+              <div>
+                <p>Cena</p>
+                <span className=" text-primary text-2xl">
+                  {!car.price ? "Upit" : car.price}
+                </span>
+              </div>
             </div>
           </div>
         </div>

@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <div className="mb-8">
       <Hero />
-      <Facts />
+      {/* <Facts /> */}
       <Listings />
       <Cards />
       <Track />

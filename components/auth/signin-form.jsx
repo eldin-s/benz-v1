@@ -7,6 +7,8 @@ import Image from "next/image";
 import { useForm } from "react-hook-form";
 import { login } from "@/app/auth/actions";
 import { useState } from "react";
+import ButtonOutline from "../ui/button-outline";
+import { FaGoogle } from "react-icons/fa6";
 
 const SigninForm = () => {
   const [loading, setLoading] = useState(false);
@@ -36,7 +38,7 @@ const SigninForm = () => {
   };
 
   return (
-    <div className="min-h-full max-w-4xl mx-auto bg-bgShade flex justify-center items-center mt-14 rounded-lg shadow-lg overflow-hidden ">
+    <div className="min-h-full max-w-4xl mx-auto bg-bgShade flex justify-center items-center mt-14 rounded-lg shadow-2xl overflow-hidden ">
       <div className="p-6 w-full ">
         {error !== "" && <p className="text-center text-red-400">{error}</p>}
         <h2 className="text-3xl  text-primary text-center mb-6">
@@ -99,6 +101,11 @@ const SigninForm = () => {
             Registruj se
           </Link>
         </p>
+
+      <div className="mt-6 w-full">
+
+        <ButtonOutline className="w-full"><FaGoogle /> Prijave se putem Google</ButtonOutline>
+      </div>
       </div>
 
       <Image src={benzbg} alt="Mercedes-Benz" className="w-full max-w-96" />

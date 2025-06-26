@@ -27,8 +27,8 @@ const Cars = () => {
   };
 
   return (
-    <section className="mt-20 max-w-[80rem] mx-auto px-9 mb-8">
-      <h1>Oglasi:</h1>
+    <section className="mt-8 max-w-[80rem] mx-auto px-9 mb-8">
+      <h3 className="text-center uppercase font-oswald font-bold pb-10">Istaknuti oglasi</h3>
       <div className="grid xl:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-6 mb-10">
         {cars?.slice(1).map((car) => (
           <div

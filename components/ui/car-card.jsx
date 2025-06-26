@@ -20,27 +20,12 @@ const CarCard = ({ listing, className }) => {
           }}
         ></div>
 
-        <div className="p-3">
+        <div className="p-3 flex items-center justify-between">
           <div className="pb-3">{model}</div>
-          <hr />
-
-          <div className="flex items-start justify-between gap-2 pt-2">
-            <div className="flex items-center gap-2">
-              <p>{production_year}. god</p>
-              {car_state === "Novo" && (
-                <div className="bg-primary px-2 rounded-md  tracking-wider text-white">
-                  NOVO
-                </div>
-              )}
-              <p>{power}ks</p>
-            </div>
-
-            <div className="pt-2">
-              <p>Cena</p>
-              <span className=" text-primary">
-                {price !== "" ? "UPIT" : price}
-              </span>
-            </div>
+          <div className="bg-primary text-white px-3 py-1 rounded-md">
+            <span className=" text-white">
+              {price !== "" ? "Upit" : price}
+            </span>
           </div>
         </div>
       </div>

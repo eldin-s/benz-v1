@@ -65,7 +65,7 @@ const SearchTrack = ({ carState, setCarState }) => {
         </div>
       </div>
 
-      <div className="md:w-1/2 flex items-center justify-end gap-4">
+      <div className="md:w-1/2 flex items-center justify-end gap-4 self-end">
         <p>Sortiraj po:</p>
 
         <div

@@ -44,26 +44,26 @@ const SingleCar = () => {
           <p>Učitavanje...</p>
         )}
 
-        <div className="bg-bgShade rounded-2xl p-4 flex flex-col justify-between gap-6">
-          <div className="text-center border-b-2 border-primary">
-            <h3>{car?.model}</h3>
-            <h2>{car?.price ? `${car?.price} €` : "Upit"}</h2>
+        <div className="bg-bgShade rounded-2xl p-4 flex flex-col justify-between gap-2 xl:gap-6">
+          <div className="text-center border-b-2 border-primary pb-3">
+            <h4 className="text-4xl">{car?.model}</h4>
+            <h4 className="text-2xl">{car?.price ? `${car?.price} €` : "Upit"}</h4>
           </div>
 
-          <div className="border-b-2 border-primary grid grid-cols-2 gap-3 mt-8 pb-8">
-            <div className="flex items-center gap-2">
+          <div className="border-b-2 border-primary grid grid-cols-2 gap-3 xl:mt-8 pb-3 xl:pb-8">
+            <div className="flex items-center justify-center gap-2">
               <TbRoad />
               <p>{car?.mileage} km</p>
             </div>
-            <div className="flex items-center gap-2">
+            <div className="flex items-center justify-center gap-2">
               <TbManualGearbox />
               <p>{car?.transmission}</p>
             </div>
-            <div className="flex items-center gap-2">
+            <div className="flex items-center justify-center gap-2">
               <LuFuel />
               <p>{car?.fuel_type}</p>
             </div>
-            <div className="flex items-center gap-2">
+            <div className="flex items-center justify-center gap-2">
               <PiEngineBold className="text-xl" />
               <p>
                 {car?.power}{" "}
@@ -72,7 +72,7 @@ const SingleCar = () => {
             </div>
           </div>
 
-          <div className="w-full flex items-center flex-col pt-8 gap-4">
+          <div className="w-full flex items-center flex-col pt-2 xl:pt-8 gap-4">
             <p className="text-center text-sm text-gray-400 font-bebas">
               Ukoliko vam je potrebna <br /> pomoc kontaktirajte nas
             </p>
@@ -92,7 +92,7 @@ const SingleCar = () => {
             </div>
           </div>
 
-          <ButtonOutline onClick={() => setModalOpen(true)} className="text-center">Zakaži servis</ButtonOutline>
+          <ButtonOutline onClick={() => setModalOpen(true)} className="text-center w-fit mx-auto">Zakaži servis</ButtonOutline>
         </div>
       </div>
 

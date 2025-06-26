@@ -116,8 +116,8 @@ const SearchingCard = ({searchParams, listingNames}) => {
       <div className="sm:flex w-full gap-4 justify-between mb-4 flex-wrap">
         <div className="py-8 px-4 rounded-3xl mb-2 bg-white text-black flex justify-between gap-4 flex-1 flex-wrap">
           {/* CARD BODY */}
-          <div className="flex-1 space-y-10">
-            <div className="grid lg:grid-cols-2 gap-4">
+          <div className="flex-1 xl:space-y-10 space-y-1">
+            <div className="grid lg:grid-cols-2 gap-x-4">
               <div
                 className="flex items-center border rounded-2xl border-primary relative pr-10 max-w-full"
                 onClick={toggleDropdown}
@@ -166,7 +166,7 @@ const SearchingCard = ({searchParams, listingNames}) => {
                 )}
               </div>
 
-              <div className="flex w-full">
+              <div className="flex w-full mt-4 lg:mt-0">
                 <select
                   name="odGodine"
                   id=""
@@ -202,7 +202,7 @@ const SearchingCard = ({searchParams, listingNames}) => {
               </div>
             </div>
 
-            <div className="grid lg:grid-cols-2 gap-4 mb">
+            <div className="grid lg:grid-cols-2 gap-x-4">
               <div className="flex max-w-full">
                 <select
                   name="odCene"
@@ -242,12 +242,12 @@ const SearchingCard = ({searchParams, listingNames}) => {
             </div>
 
             <div className="flex items-center border rounded-2xl mt-8">
-              <div className="w-30 h-full px-2 py-4 rounded-s-xl   text-sm text-nowrap">
+              <div className="w-30 h-full px-2 py-4 rounded-s-xl text-sm text-nowrap">
                 BRZA PRETRAGA
               </div>
 
               <div className="flex items-center justify-between w-full flex-wrap">
-                <div className="cursor-pointer px-4 text-xl  text-primary w-32"
+                <div className="cursor-pointer px-4 text-xl w-24 md:w-32"
                   onClick={() => setModel("S 350")}
                 >
                   <Image
@@ -258,7 +258,7 @@ const SearchingCard = ({searchParams, listingNames}) => {
                     height={"auto"}
                   />
                 </div>
-                <div className="cursor-pointer px-4 text-xl  text-primary w-32"
+                <div className="cursor-pointer px-4 text-xl w-24 md:w-32"
                   onClick={() => setModel("G 500")}
                 >
                   <Image
@@ -269,7 +269,7 @@ const SearchingCard = ({searchParams, listingNames}) => {
                     height={"auto"}
                   />
                 </div>
-                <div className="cursor-pointer px-4 text-xl  text-primary w-32"
+                <div className="cursor-pointer px-4 text-xl w-24 md:w-32"
                   onClick={() => setModel("GLE 400")}
                 >
                   <Image
@@ -280,7 +280,7 @@ const SearchingCard = ({searchParams, listingNames}) => {
                     height={"auto"}
                   />
                 </div>
-                <div className="cursor-pointer px-4 text-xl  text-primary w-32"
+                <div className="cursor-pointer px-4 text-xl w-24 md:w-32"
                   onClick={() => setModel("GLS 400")}
                 >
                   <Image
